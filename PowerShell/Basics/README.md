@@ -6,15 +6,14 @@
 2. Run on Windows Only.
 3. Feature Complete. 
 4. Full set of Windows PowerShell Commands
-
+5. Run Windows PowerShell as an Administrator.
 - **PowerShell Core** is Based on **.NET Core**
 1. Downloadable from Github and runs on Windows, Linux, and Mac OS.
 2. Open Source Development
 3. Subset of Windows PowerShell Commands.
 4. Demo for PowerShell Core (V7).
-5. Run Windows PowerShell as an Administrator.
 ## PowerShell Basics
-1. Anatomy of a PowerShell Command
+1. Anatomy of a PowerShell Command (Verb-Noun, '-': parameter)
 2. Help in PowerShell
 3. Objects and the Pipeline
 ## Gathering Info with PowerShell

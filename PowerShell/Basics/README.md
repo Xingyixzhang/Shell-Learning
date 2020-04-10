@@ -48,45 +48,10 @@ PS C:\Users\xingy> $data | export-csv .services2.csv    # comma seperated output
 PS C:\Users\xingy> get-content .\services2.csv | more   # comma separated output displayed in console.
 ```
 - Run Windows PowerShell as an Administrator:
-```ps1
-# Check your PowerShell version and compatible PowerShell Versions.
-# Run on PowerShell Admin:
-PS C:\WINDOWS\system32> $psVersionTable 
-
-Name                           Value
-----                           -----
-PSVersion                      5.1.18362.628
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-BuildVersion                   10.0.18362.628
-CLRVersion                     4.0.30319.42000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-
-# Run on PowerShell Core:
-PS C:\Users\xingy> $psVersionTable
-
-Name                           Value
-----                           -----
-PSVersion                      7.0.0
-PSEdition                      Core
-GitCommitId                    7.0.0
-OS                             Microsoft Windows 10.0.18362
-Platform                       Win32NT
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-WSManStackVersion              3.0
-
-# Check how many commands are loaded in the System:
-PS C:\WINDOWS\system32> (get-command).count # PowerShell Admin.
-1597
-PS C:\Users\xingy> (get-command).count      # PowerShell Core.
-1502
-```
 ## PowerShell Basics
-
+1. Anatomy of a PowerShell Command
+2. Help in PowerShell
+3. Objects and the Pipeline
 ## Gathering Info with PowerShell
 
 ## Remoting with PowerShell

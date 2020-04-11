@@ -1,5 +1,7 @@
 # PowerShell Overview
 ## Introduction to PowerShell
+- **PowerShell** is an **Object-Oriented Language** (Not Text-Based). It is a scripting language that treats data as objects and uses object as output.
+- **PowerShell** Contains Properties and Methods
 - **PowerShell** is an execution engine that provides the ability for you to interface with your environment using a variety of tools.
 ![powershell example 1](https://github.com/Xingyixzhang/Shell-Learning/blob/master/PowerShell/images/psl_ex1.png)
 1. Windows PowerShell (Built into Windows) is based on **.NET standard**. It uses the full .NET Framework built inside Windows.
@@ -33,8 +35,22 @@ PS C:\Users\xingy> get-help -name get-command -detailed
 PS C:\Users\xingy> man - name get-command -detailed
 PS C:\Users\xingy> get-help -name *DNS*
 ```
-- Get-Member
-3. Objects and the Pipeline
+- Get-Member: (Used to see what makes up an object) Get properties and methods of objects that are the output of a specific command.
+```ps1
+# Find object properties with Get-member working with pipelines.
+PS C:\Users\xingy> help gm
+PS C:\Users\xingy> gsv | gm
+
+# select-object: selects all properties out of the objects coming across the pipeline.
+PS C:\Users\xingy> gsv | select-object Name, MachineName, Status 
+PS C:\Users\xingy> gsv | select-object Name, MachineName, Status | gm
+
+PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
+>> select-object Name, MachineName, Status |
+>> Sort-object -property machineName | more
+```
+3. Objects and the Pipeline: send output of a command into a secnd command.
+- Pipelining in PowerShell: Get sth, (Sort) sth, Do sth.
 ## Gathering Info with PowerShell
 
 ## Remoting with PowerShell

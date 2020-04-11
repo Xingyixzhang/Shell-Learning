@@ -1,0 +1,286 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411093140
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19980
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\GatherOSandHardwareInfo.txt
+PS C:\Users\xingy> gcm *counter*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Disable-OdbcPerfCounter                            1.0.0.0    Wdac
+Function        Enable-OdbcPerfCounter                             1.0.0.0    Wdac
+Function        Get-OdbcPerfCounter                                1.0.0.0    Wdac
+Function        Get-StorageReliabilityCounter                      2.0.0.0    Storage
+Function        Reset-StorageReliabilityCounter                    2.0.0.0    Storage
+Cmdlet          Export-Counter                                     3.0.0.0    Microsoft.PowerShell.Diagnostics
+Cmdlet          Get-Counter                                        3.0.0.0    Microsoft.PowerShell.Diagnostics
+Cmdlet          Import-Counter                                     3.0.0.0    Microsoft.PowerShell.Diagnostics
+
+
+PS C:\Users\xingy> help get-counter
+
+NAME
+    Get-Counter
+
+SYNTAX
+    Get-Counter [[-Counter] <string[]>] [-SampleInterval <int>] [-MaxSamples <long>] [-Continuous] [-ComputerName
+    <string[]>]  [<CommonParameters>]
+
+    Get-Counter [-ListSet] <string[]> [-ComputerName <string[]>]  [<CommonParameters>]
+
+
+ALIASES
+    None
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Get-Counter -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkID=138335.
+PS C:\Users\xingy> get-counter
+
+Timestamp                 CounterSamples
+---------                 --------------
+4/11/2020 9:32:45 AM      \\laptop-ditbp9db\network interface(realtek pcie gbe family controller)\bytes total/sec :
+                          0
+
+                          \\laptop-ditbp9db\network interface(realtek rtl8822be 802.11ac pcie adapter)\bytes total/sec
+                          :
+                          33156.6196638814
+
+                          \\laptop-ditbp9db\processor(_total)\% processor time :
+                          10.6219108440788
+
+                          \\laptop-ditbp9db\memory\% committed bytes in use :
+                          45.0859818712543
+
+                          \\laptop-ditbp9db\memory\cache faults/sec :
+                          0
+
+                          \\laptop-ditbp9db\physicaldisk(_total)\% disk time :
+                          0
+
+                          \\laptop-ditbp9db\physicaldisk(_total)\current disk queue length :
+                          0
+
+
+
+
+PS C:\Users\xingy> get-counter  -listset *memory*
+
+
+CounterSetName     : GPU Local Adapter Memory
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : The local memory usage of each adapter
+Paths              : {\GPU Local Adapter Memory(*)\Local Usage}
+PathsWithInstances : {\GPU Local Adapter Memory(luid_0x00000000_0x0000E313_phys_0_part_0)\Local Usage, \GPU Local
+                     Adapter Memory(luid_0x00000000_0x0000DB46_phys_0_part_0)\Local Usage}
+Counter            : {\GPU Local Adapter Memory(*)\Local Usage}
+
+CounterSetName     : GPU Adapter Memory
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : The memory usage of each adapter
+Paths              : {\GPU Adapter Memory(*)\Shared Usage, \GPU Adapter Memory(*)\Dedicated Usage, \GPU Adapter
+                     Memory(*)\Total Committed}
+PathsWithInstances : {\GPU Adapter Memory(luid_0x00000000_0x0000E313_phys_0)\Shared Usage, \GPU Adapter
+                     Memory(luid_0x00000000_0x0000DB46_phys_0)\Shared Usage, \GPU Adapter
+                     Memory(luid_0x00000000_0x0000E313_phys_0)\Dedicated Usage, \GPU Adapter
+                     Memory(luid_0x00000000_0x0000DB46_phys_0)\Dedicated Usage...}
+Counter            : {\GPU Adapter Memory(*)\Shared Usage, \GPU Adapter Memory(*)\Dedicated Usage, \GPU Adapter
+                     Memory(*)\Total Committed}
+
+CounterSetName     : GPU Process Memory
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : The memory usage of each process
+Paths              : {\GPU Process Memory(*)\Shared Usage, \GPU Process Memory(*)\Dedicated Usage, \GPU Process
+                     Memory(*)\Non Local Usage, \GPU Process Memory(*)\Local Usage...}
+PathsWithInstances : {\GPU Process Memory(pid_8168_luid_0x00000000_0x0000DB46_phys_0)\Shared Usage, \GPU Process
+                     Memory(pid_14580_luid_0x00000000_0x0000DB46_phys_0)\Shared Usage, \GPU Process
+                     Memory(pid_14580_luid_0x00000000_0x0000E313_phys_0)\Shared Usage, \GPU Process
+                     Memory(pid_18364_luid_0x00000000_0x0000DB46_phys_0)\Shared Usage...}
+Counter            : {\GPU Process Memory(*)\Shared Usage, \GPU Process Memory(*)\Dedicated Usage, \GPU Process
+                     Memory(*)\Non Local Usage, \GPU Process Memory(*)\Local Usage...}
+
+CounterSetName     : GPU Non Local Adapter Memory
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : The non local memory usage of each adapter
+Paths              : {\GPU Non Local Adapter Memory(*)\Non Local Usage}
+PathsWithInstances : {\GPU Non Local Adapter Memory(*)\Non Local Usage}
+Counter            : {\GPU Non Local Adapter Memory(*)\Non Local Usage}
+
+CounterSetName     : Hyper-V Dynamic Memory Integration Service
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : This counter set represents the statistics for Dynamic Memory Integration Services
+Paths              : {\Hyper-V Dynamic Memory Integration Service\Maximum Memory, Mbytes}
+PathsWithInstances : {}
+Counter            : {\Hyper-V Dynamic Memory Integration Service\Maximum Memory, Mbytes}
+
+CounterSetName     : .NET CLR Memory
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : Counters for CLR Garbage Collected heap.
+Paths              : {\.NET CLR Memory(*)\# Gen 0 Collections, \.NET CLR Memory(*)\# Gen 1 Collections, \.NET CLR
+                     Memory(*)\# Gen 2 Collections, \.NET CLR Memory(*)\Promoted Memory from Gen 0...}
+PathsWithInstances : {\.NET CLR Memory(_Global_)\# Gen 0 Collections, \.NET CLR Memory(powershell)\# Gen 0
+                     Collections, \.NET CLR Memory(HPAudioSwitch)\# Gen 0 Collections, \.NET CLR
+                     Memory(HPSystemEventUtilityHost)\# Gen 0 Collections...}
+Counter            : {\.NET CLR Memory(*)\# Gen 0 Collections, \.NET CLR Memory(*)\# Gen 1 Collections, \.NET CLR
+                     Memory(*)\# Gen 2 Collections, \.NET CLR Memory(*)\Promoted Memory from Gen 0...}
+
+CounterSetName     : Memory
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : The Memory performance object  consists of counters that describe the behavior of physical and
+                     virtual memory on the computer.  Physical memory is the amount of random access memory on the
+                     computer.  Virtual memory consists of the space in physical memory and on disk.  Many of the
+                     memory counters monitor paging, which is the movement of pages of code and data between disk and
+                     physical memory.  Excessive paging, a symptom of a memory shortage, can cause delays which
+                     interfere with all system processes.
+Paths              : {\Memory\Page Faults/sec, \Memory\Available Bytes, \Memory\Committed Bytes, \Memory\Commit
+                     Limit...}
+PathsWithInstances : {}
+Counter            : {\Memory\Page Faults/sec, \Memory\Available Bytes, \Memory\Committed Bytes, \Memory\Commit
+                     Limit...}
+
+CounterSetName     : NUMA Node Memory
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : Counters that report approximate memory utilization statistics per node on NUMA systems.
+Paths              : {\NUMA Node Memory(*)\Total MBytes, \NUMA Node Memory(*)\Free & Zero Page List MBytes, \NUMA Node
+                     Memory(*)\Standby List MBytes, \NUMA Node Memory(*)\Available MBytes}
+PathsWithInstances : {\NUMA Node Memory(0)\Total MBytes, \NUMA Node Memory(_Total)\Total MBytes, \NUMA Node
+                     Memory(0)\Free & Zero Page List MBytes, \NUMA Node Memory(_Total)\Free & Zero Page List MBytes...}
+Counter            : {\NUMA Node Memory(*)\Total MBytes, \NUMA Node Memory(*)\Free & Zero Page List MBytes, \NUMA Node
+                     Memory(*)\Standby List MBytes, \NUMA Node Memory(*)\Available MBytes}
+
+CounterSetName     : .NET Memory Cache 4.0
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : System.Runtime.Caching.MemoryCache Performance Counters
+Paths              : {\.NET Memory Cache 4.0(*)\Cache Hits, \.NET Memory Cache 4.0(*)\Cache Misses, \.NET Memory Cache
+                     4.0(*)\Cache Hit Ratio, \.NET Memory Cache 4.0(*)\Cache Trims...}
+PathsWithInstances : {\.NET Memory Cache 4.0(*)\Cache Hits, \.NET Memory Cache 4.0(*)\Cache Misses, \.NET Memory Cache
+                     4.0(*)\Cache Hit Ratio, \.NET Memory Cache 4.0(*)\Cache Trims...}
+Counter            : {\.NET Memory Cache 4.0(*)\Cache Hits, \.NET Memory Cache 4.0(*)\Cache Misses, \.NET Memory Cache
+                     4.0(*)\Cache Hit Ratio, \.NET Memory Cache 4.0(*)\Cache Trims...}
+
+
+
+PS C:\Users\xingy> get-counter  -listset memory
+
+
+CounterSetName     : Memory
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : The Memory performance object  consists of counters that describe the behavior of physical and
+                     virtual memory on the computer.  Physical memory is the amount of random access memory on the
+                     computer.  Virtual memory consists of the space in physical memory and on disk.  Many of the
+                     memory counters monitor paging, which is the movement of pages of code and data between disk and
+                     physical memory.  Excessive paging, a symptom of a memory shortage, can cause delays which
+                     interfere with all system processes.
+Paths              : {\Memory\Page Faults/sec, \Memory\Available Bytes, \Memory\Committed Bytes, \Memory\Commit
+                     Limit...}
+PathsWithInstances : {}
+Counter            : {\Memory\Page Faults/sec, \Memory\Available Bytes, \Memory\Committed Bytes, \Memory\Commit
+                     Limit...}
+
+
+
+PS C:\Users\xingy> get-counter  -listset memory | select -expand counter
+\Memory\Page Faults/sec
+\Memory\Available Bytes
+\Memory\Committed Bytes
+\Memory\Commit Limit
+\Memory\Write Copies/sec
+\Memory\Transition Faults/sec
+\Memory\Cache Faults/sec
+\Memory\Demand Zero Faults/sec
+\Memory\Pages/sec
+\Memory\Pages Input/sec
+\Memory\Page Reads/sec
+\Memory\Pages Output/sec
+\Memory\Pool Paged Bytes
+\Memory\Pool Nonpaged Bytes
+\Memory\Page Writes/sec
+\Memory\Pool Paged Allocs
+\Memory\Pool Nonpaged Allocs
+\Memory\Free System Page Table Entries
+\Memory\Cache Bytes
+\Memory\Cache Bytes Peak
+\Memory\Pool Paged Resident Bytes
+\Memory\System Code Total Bytes
+\Memory\System Code Resident Bytes
+\Memory\System Driver Total Bytes
+\Memory\System Driver Resident Bytes
+\Memory\System Cache Resident Bytes
+\Memory\% Committed Bytes In Use
+\Memory\Available KBytes
+\Memory\Available MBytes
+\Memory\Transition Pages RePurposed/sec
+\Memory\Free & Zero Page List Bytes
+\Memory\Modified Page List Bytes
+\Memory\Standby Cache Reserve Bytes
+\Memory\Standby Cache Normal Priority Bytes
+\Memory\Standby Cache Core Bytes
+\Memory\Long-Term Average Standby Cache Lifetime (s)
+PS C:\Users\xingy> get-counter  -counter "\Memory\Pages /sec", "\Memory\% Committed Bytes in use" | ft
+get-counter : The specified counter could not be found.
+At line:1 char:1
++ get-counter  -counter "\Memory\Pages /sec", "\Memory\% Committed Byte ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidResult: (:) [Get-Counter], Exception
+    + FullyQualifiedErrorId : CounterApiError,Microsoft.PowerShell.Commands.GetCounterCommand
+get-counter : The specified counter could not be found.
+At line:1 char:1
++ get-counter  -counter "\Memory\Pages /sec", "\Memory\% Committed Byte ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidResult: (:) [Get-Counter], Exception
+    + FullyQualifiedErrorId : CounterApiError,Microsoft.PowerShell.Commands.GetCounterCommand
+
+
+Timestamp                 CounterSamples
+---------                 --------------
+4/11/2020 9:36:01 AM      \\laptop-ditbp9db\memory\% committed bytes in use :
+                          45.2405048173947
+
+
+
+
+PS C:\Users\xingy> get-counter  -counter "\Memory\Pages/sec", "\Memory\% Committed Bytes in use" | ft
+
+Timestamp                 CounterSamples
+---------                 --------------
+4/11/2020 9:36:42 AM      \\laptop-ditbp9db\memory\pages/sec :
+                          0
+
+                          \\laptop-ditbp9db\memory\% committed bytes in use :
+                          44.9423313012678
+
+
+
+
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411093736
+**********************

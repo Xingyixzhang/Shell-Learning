@@ -1,0 +1,244 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411110801
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19980
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Get_ComputerInfo_Demo.txt
+PS C:\Users\xingy> help get-computerinfo
+
+NAME
+    Get-ComputerInfo
+
+SYNTAX
+    Get-ComputerInfo [[-Property] <string[]>]  [<CommonParameters>]
+
+
+ALIASES
+    gin
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying
+    only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use
+    Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Get-ComputerInfo
+    -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkId=799466.
+PS C:\Users\xingy> get-computerinfo | more
+
+
+WindowsBuildLabEx                                       : 18362.1.amd64fre.19h1_release.1903
+                                                          18-1202
+WindowsCurrentVersion                                   : 6.3
+WindowsEditionId                                        : Core
+WindowsInstallationType                                 : Client
+WindowsInstallDateFromRegistry                          : 2/2/2020 12:30:53 AM
+WindowsProductId                                        : 00325-96615-77944-AAOEM
+WindowsProductName                                      : Windows 10 Home
+WindowsRegisteredOrganization                           : HP
+WindowsRegisteredOwner                                  : xingyi.zhang.1@outlook.com
+WindowsSystemRoot                                       : C:\WINDOWS
+WindowsVersion                                          : 1903
+BiosCharacteristics                                     : {7, 11, 12, 15...}
+BiosBIOSVersion                                         : {HPQOEM - 1072009, F.35, American
+                                                          Megatrends - 5000E}
+BiosBuildNumber                                         :
+BiosCaption                                             : F.35
+BiosCodeSet                                             :
+BiosCurrentLanguage                                     : en|US|iso8859-1
+BiosDescription                                         : F.35
+BiosEmbeddedControllerMajorVersion                      : 46
+BiosEmbeddedControllerMinorVersion                      : 23
+BiosFirmwareType                                        : Uefi
+BiosIdentificationCode                                  :
+BiosInstallableLanguages                                : 5
+BiosInstallDate                                         :
+BiosLanguageEdition                                     :
+BiosListOfLanguages                                     : {en|US|iso8859-1,
+                                                          fr|FR|iso8859-1, es|ES|iso8859-1,
+                                                          zh|TW|unicode...}
+BiosManufacturer                                        : AMI
+BiosName                                                : F.35
+BiosOtherTargetOS                                       :
+BiosPrimaryBIOS                                         : True
+BiosReleaseDate                                         : 9/23/2019 5:00:00 PM
+BiosSeralNumber                                         : 5CD9480G16
+BiosSMBIOSBIOSVersion                                   : F.35
+BiosSMBIOSMajorVersion                                  : 3
+BiosSMBIOSMinorVersion                                  : 2
+BiosSMBIOSPresent                                       : True
+BiosSoftwareElementState                                : Running
+BiosStatus                                              : OK
+BiosSystemBiosMajorVersion                              : 15
+BiosSystemBiosMinorVersion                              : 35
+BiosTargetOperatingSystem                               : 0
+BiosVersion                                             : HPQOEM - 1072009
+CsAdminPasswordStatus                                   : Unknown
+CsAutomaticManagedPagefile                              : True
+CsAutomaticResetBootOption                              : True
+CsAutomaticResetCapability                              : True
+CsBootOptionOnLimit                                     :
+CsBootOptionOnWatchDog                                  :
+CsBootROMSupported                                      : True
+CsBootStatus                                            : {0, 0, 0, 0...}
+CsBootupState                                           : Normal boot
+CsCaption                                               : LAPTOP-DITBP9DB
+CsChassisBootupState                                    : Safe
+CsChassisSKUNumber                                      :
+CsCurrentTimeZone                                       : -420
+CsDaylightInEffect                                      : True
+CsDescription                                           : AT/AT COMPATIBLE
+CsDNSHostName                                           : LAPTOP-DITBP9DB
+CsDomain                                                : WORKGROUP
+CsDomainRole                                            : StandaloneWorkstation
+CsEnableDaylightSavingsTime                             : True
+CsFrontPanelResetStatus                                 : Unknown
+CsHypervisorPresent                                     : False
+CsInfraredSupported                                     : False
+CsInitialLoadInfo                                       :
+CsInstallDate                                           :
+CsKeyboardPasswordStatus                                : Unknown
+CsLastLoadInfo                                          :
+CsManufacturer                                          : HP
+CsModel                                                 : HP Pavilion Laptop 15z-cw100
+CsName                                                  : LAPTOP-DITBP9DB
+CsNetworkAdapters                                       : {Wi-Fi, Ethernet, Bluetooth
+                                                          Network Connection}
+CsNetworkServerModeEnabled                              : True
+CsNumberOfLogicalProcessors                             : 8
+CsNumberOfProcessors                                    : 1
+CsProcessors                                            : {AMD Ryzen 5 3500U with Radeon
+                                                          Vega Mobile Gfx  }
+CsOEMStringArray                                        : {$HP$, ABS 70/71 79 7A 7B 7C,
+                                                          BCU_Y, FBYTE#3H6b7B7K7M7WaBapaqasa
+                                                          wbCbhcbdUdXdpdqfP.qa;BUILDID#19WW1
+                                                          B6T...}
+CsPartOfDomain                                          : False
+CsPauseAfterReset                                       : -1
+CsPCSystemType                                          : Mobile
+CsPCSystemTypeEx                                        : Mobile
+CsPowerManagementCapabilities                           :
+CsPowerManagementSupported                              :
+CsPowerOnPasswordStatus                                 : Unknown
+CsPowerState                                            : Unknown
+CsPowerSupplyState                                      : Safe
+CsPrimaryOwnerContact                                   :
+CsPrimaryOwnerName                                      : xingyi.zhang.1@outlook.com
+CsResetCapability                                       : Other
+CsResetCount                                            : -1
+CsResetLimit                                            : -1
+CsRoles                                                 : {LM_Workstation, LM_Server, NT}
+CsStatus                                                : OK
+CsSupportContactDescription                             :
+CsSystemFamily                                          : 103C_5335KV HP Pavilion
+CsSystemSKUNumber                                       : 5MU50AV
+CsSystemType                                            : x64-based PC
+CsThermalState                                          : Safe
+CsTotalPhysicalMemory                                   : 14941962240
+CsPhyicallyInstalledMemory                              : 16777216
+CsUserName                                              : LAPTOP-DITBP9DB\xingy
+CsWakeUpType                                            : PowerSwitch
+CsWorkgroup                                             : WORKGROUP
+OsName                                                  : Microsoft Windows 10 Home
+OsType                                                  : WINNT
+OsOperatingSystemSKU                                    : WindowsHome
+OsVersion                                               : 10.0.18362
+OsCSDVersion                                            :
+OsBuildNumber                                           : 18362
+OsHotFixes                                              : {KB4537572, KB4497727, KB4506933,
+                                                          KB4516115...}
+OsBootDevice                                            : \Device\HarddiskVolume2
+OsSystemDevice                                          : \Device\HarddiskVolume4
+OsSystemDirectory                                       : C:\WINDOWS\system32
+OsSystemDrive                                           : C:
+OsWindowsDirectory                                      : C:\WINDOWS
+OsCountryCode                                           : 1
+OsCurrentTimeZone                                       : -420
+OsLocaleID                                              : 0409
+OsLocale                                                : en-US
+OsLocalDateTime                                         : 4/11/2020 11:09:10 AM
+OsLastBootUpTime                                        : 4/10/2020 1:12:29 PM
+OsUptime                                                : 21:56:40.9312230
+OsBuildType                                             : Multiprocessor Free
+OsCodeSet                                               : 1252
+OsDataExecutionPreventionAvailable                      : True
+OsDataExecutionPrevention32BitApplications              : True
+OsDataExecutionPreventionDrivers                        : True
+OsDataExecutionPreventionSupportPolicy                  : OptIn
+OsDebug                                                 : False
+OsDistributed                                           : False
+OsEncryptionLevel                                       : 256
+OsForegroundApplicationBoost                            : Maximum
+OsTotalVisibleMemorySize                                : 14591760
+OsFreePhysicalMemory                                    : 9154108
+OsTotalVirtualMemorySize                                : 19572496
+OsFreeVirtualMemory                                     : 11327844
+OsInUseVirtualMemory                                    : 8244652
+OsTotalSwapSpaceSize                                    :
+OsSizeStoredInPagingFiles                               : 4980736
+OsFreeSpaceInPagingFiles                                : 4800824
+OsPagingFiles                                           : {C:\pagefile.sys}
+OsHardwareAbstractionLayer                              : 10.0.18362.628
+OsInstallDate                                           : 2/1/2020 4:30:53 PM
+OsManufacturer                                          : Microsoft Corporation
+OsMaxNumberOfProcesses                                  : 4294967295
+OsMaxProcessMemorySize                                  : 137438953344
+OsMuiLanguages                                          : {en-US, zh-CN}
+OsNumberOfLicensedUsers                                 :
+OsNumberOfProcesses                                     : 213
+OsNumberOfUsers                                         : 2
+OsOrganization                                          : HP
+OsArchitecture                                          : 64-bit
+OsLanguage                                              : en-US
+OsProductSuites                                         : {TerminalServicesSingleSession,
+                                                          HomeEdition}
+OsOtherTypeDescription                                  :
+OsPAEEnabled                                            :
+OsPortableOperatingSystem                               : False
+OsPrimary                                               : True
+OsProductType                                           : WorkStation
+OsRegisteredUser                                        : xingyi.zhang.1@outlook.com
+OsSerialNumber                                          : 00325-96615-77944-AAOEM
+OsServicePackMajorVersion                               : 0
+OsServicePackMinorVersion                               : 0
+OsStatus                                                : OK
+OsSuites                                                : {TerminalServices,
+                                                          TerminalServicesSingleSession,
+                                                          HomeEdition}
+OsServerLevel                                           :
+KeyboardLayout                                          : en-US
+TimeZone                                                : (UTC-08:00) Pacific Time (US &
+                                                          Canada)
+LogonServer                                             : \\LAPTOP-DITBP9DB
+PowerPlatformRole                                       : Mobile
+HyperVisorPresent                                       : False
+HyperVRequirementDataExecutionPreventionAvailable       : True
+HyperVRequirementSecondLevelAddressTranslation          : True
+HyperVRequirementVirtualizationFirmwareEnabled          : False
+HyperVRequirementVMMonitorModeExtensions                : True
+DeviceGuardSmartStatus                                  : Off
+DeviceGuardRequiredSecurityProperties                   :
+DeviceGuardAvailableSecurityProperties                  :
+DeviceGuardSecurityServicesConfigured                   :
+DeviceGuardSecurityServicesRunning                      :
+DeviceGuardCodeIntegrityPolicyEnforcementStatus         :
+DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus :
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411111004
+**********************

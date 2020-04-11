@@ -63,7 +63,38 @@ PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
   When Accessing WMI info: WMI Repository -> CIMv2 Namespace -> classes(ex. WIN32_Processor contains Device ID and Name..)
 ```
 #### Category 2: Networking
+```
+See GetNetworkInfo.txt Demo File.
+```
 #### Category 3: Files and Folders
-## Remoting with PowerShell
+```txt
+Get-childitem -path c:\ -recurse | gm
+Get-childitem -path c:\ -recurse | where extension -eq '.PNG'
+Get-childitem -path c:\ -recurse | where extension -eq '.PNG' | ft Directory, Name, LastWriteTime
 
+# Moving File:
+Gcm *copy*
+help copy-item
+copy-item c:\ -destination d:\CopiedFolder -Recurse -Verbose # Verbose messages explains steps as the shell run through.
+move-item d:\CopiedFolder -Destination d:\MovedFolder -verbose
+dir d:\MovedFolder -recurse
+
+# Remain item:
+remain-item d:\movedFolder -newName d:\RenamedFolder
+dir d:\
+```
+## Remoting with PowerShell
+- Tools:
+1. WMI: Both Windows PowerShell and PowerShell Core
+2. WinRM (Windows Remote Management): Both Windows PowerShell and PowerShell Core
+3. SSH (Windows and non-Windows Computers)
+4. RPC (Only Available in Windows PowerShell, not PowerShell Core)
+
+- Enable PowerShell Remoting on Windows PowerShell:
+1. ```ps1 PS> Enable-PSRemoting ```
+2. Give the user access to powershell remoting, using ```ps1 PS> Set-PSSessionConfiguration ```
+
+- Enable PowerShell Remoting on PowerShell Core:
+1. Install a script located in the PS home directory. ```ps1 PS> Install-PowerShellRemoting.ps1 ```
+2. Ensure user has the proper permission.
 ## Build a User Inventory Script with PowerShell

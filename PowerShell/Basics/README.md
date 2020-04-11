@@ -98,3 +98,11 @@ dir d:\
 1. Install a script located in the PS home directory. ```ps1 PS> Install-PowerShellRemoting.ps1 ```
 2. Ensure user has the proper permission.
 ## Build a User Inventory Script with PowerShell
+- Run scripts in PowerShell
+1. PS Scripts are bunch of commands from the CLI with .ps1 extension and run to perform action of commands.
+2. Tools for automation, it is not programming.
+3. PS scripts are good for performing routine maintenance tasks and automated tasks.
+4. For security reasons, PowerShell does not allow the execution of the scripts.
+- Basics of a parameterized script
+- Using PowerShell ISE and VS Code
+- Build a remote info gathering script

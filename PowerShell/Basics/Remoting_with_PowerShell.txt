@@ -1,0 +1,144 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411160213
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 868
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Remoting_with_PowerShell.txt
+PS C:\Users\xingy> $ComputerName = "ClientA"
+PS C:\Users\xingy> gcm *-PSSession
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Connect-PSSession                                  3.0.0.0    Microsoft.P...
+Cmdlet          Disconnect-PSSession                               3.0.0.0    Microsoft.P...
+Cmdlet          Enter-PSSession                                    3.0.0.0    Microsoft.P...
+Cmdlet          Exit-PSSession                                     3.0.0.0    Microsoft.P...
+Cmdlet          Export-PSSession                                   3.1.0.0    Microsoft.P...
+Cmdlet          Get-PSSession                                      3.0.0.0    Microsoft.P...
+Cmdlet          Import-PSSession                                   3.1.0.0    Microsoft.P...
+Cmdlet          New-PSSession                                      3.0.0.0    Microsoft.P...
+Cmdlet          Receive-PSSession                                  3.0.0.0    Microsoft.P...
+Cmdlet          Remove-PSSession                                   3.0.0.0    Microsoft.P...
+
+
+PS C:\Users\xingy> $credential = get-credential
+PS C:\Users\xingy> New-PSSession -ComputerName $ComputerName -Credential $credential
+New-PSSession : [ClientA] Connecting to remote server ClientA failed with the following error message : The WinRM 
+client cannot process the request. If the authentication scheme is different from Kerberos, or if the client computer 
+is not joined to a domain, then HTTPS transport must be used or the destination machine must be added to the 
+TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts 
+list might not be authenticated. You can get more information about that by running the following command: winrm help 
+config. For more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName $ComputerName -Credential $credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionOpenFailed
+New-PSSession : [ClientA] Connecting to remote server ClientA failed with the following
+error message : The WinRM client cannot process the request. If the authentication scheme
+is different from Kerberos, or if the client computer is not joined to a domain, then HTTPS
+transport must be used or the destination machine must be added to the TrustedHosts
+configuration setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the
+TrustedHosts list might not be authenticated. You can get more information about that by
+running the following command: winrm help config. For more information, see the
+about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName $ComputerName -Credential $credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace)
+    [New-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionOpenFailed
+PS C:\Users\xingy> Enter-PSSession -Name WinRM1
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentException
+    + FullyQualifiedErrorId : 
+RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentE
+   xception
+    + FullyQualifiedErrorId : RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShe
+   ll.Commands.EnterPSSessionCommand
+
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentException
+    + FullyQualifiedErrorId : 
+RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentE
+   xception
+    + FullyQualifiedErrorId : RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShe
+   ll.Commands.EnterPSSessionCommand
+
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentException
+    + FullyQualifiedErrorId : 
+RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : The remote session with the name WinRM1  is not available.
+At line:1 char:1
++ Enter-PSSession -Name WinRM1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (WinRM1:String) [Enter-PSSession], ArgumentE
+   xception
+    + FullyQualifiedErrorId : RemoteRunspaceNotAvailableForSpecifiedName,Microsoft.PowerShe
+   ll.Commands.EnterPSSessionCommand
+
+PS C:\Users\xingy> $env: COMPUTERNAME
+At line:1 char:1
++ $env: COMPUTERNAME
++ ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At line:1 char:7
++ $env: COMPUTERNAME
++       ~~~~~~~~~~~~
+Unexpected token 'COMPUTERNAME' in expression or statement.
+At line:1 char:1
++ $env: COMPUTERNAME
++ ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character.
+Consider using ${} to delimit the name.
+
+At line:1 char:7
++ $env: COMPUTERNAME
++       ~~~~~~~~~~~~
+Unexpected token 'COMPUTERNAME' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+
+PS C:\Users\xingy> exit
+**********************
+Windows PowerShell transcript end
+End time: 20200411160542
+**********************
+PS C:\Users\xingy> get-Pssession
+PS C:\Users\xingy> enter-pssession -id 1
+PS C:\Users\xingy> Remove-PSSession

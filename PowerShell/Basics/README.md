@@ -53,6 +53,15 @@ PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
 - Pipelining in PowerShell: Get sth, (Sort) sth, Do sth.
 ## Gathering Info with PowerShell
 #### Category 1: Computer and Hardware
+- Gathering OS info. 
+```txt
+1. Tools: 
+- Windows Management Instrumentation (WMI)  -Get-WMIobject
+  WMI is an extension in Windows OS. 
+  WMI is built by Microsoft to allow access info contained in the OS.
+  Based on the Common Information Model (CIM)  -Get-CimInstance (CIM is introduced in PowerShell v3)
+  When Accessing WMI info: WMI Repository -> CIMv2 Namespace -> classes(ex. WIN32_Processor contains Device ID and Name..)
+```
 #### Category 2: Networking
 #### Category 3: Files and Folders
 ## Remoting with PowerShell

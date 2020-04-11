@@ -1,4 +1,4 @@
-﻿**********************
+**********************
 Windows PowerShell transcript start
 Start time: 20200410233605
 Username: LAPTOP-DITBP9DB\xingy

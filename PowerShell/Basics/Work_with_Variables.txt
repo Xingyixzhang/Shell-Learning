@@ -1,0 +1,177 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411142210
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 868
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Work_with_Variables.txt
+PS C:\Users\xingy> get-childitem ENV: | more
+
+Name                           Value
+----                           -----
+ALLUSERSPROFILE                C:\ProgramData
+APPDATA                        C:\Users\xingy\AppData\Roaming
+CommonProgramFiles             C:\Program Files\Common Files
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files
+CommonProgramW6432             C:\Program Files\Common Files
+COMPUTERNAME                   LAPTOP-DITBP9DB
+ComSpec                        C:\WINDOWS\system32\cmd.exe
+DriverData                     C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE                      C:
+HOMEPATH                       \Users\xingy
+LOCALAPPDATA                   C:\Users\xingy\AppData\Local
+LOGONSERVER                    \\LAPTOP-DITBP9DB
+NUMBER_OF_PROCESSORS           8
+OneDrive                       C:\Users\xingy\OneDrive
+OneDriveConsumer               C:\Users\xingy\OneDrive
+OnlineServices                 Online Services
+OS                             Windows_NT
+Path                           C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\W...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+platformcode                   KV
+POWERSHELL_DISTRIBUTION_CHA... MSI:Windows 10 Home
+PROCESSOR_ARCHITECTURE         AMD64
+PROCESSOR_IDENTIFIER           AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+PROCESSOR_LEVEL                23
+PROCESSOR_REVISION             1801
+ProgramData                    C:\ProgramData
+ProgramFiles                   C:\Program Files
+ProgramFiles(x86)              C:\Program Files (x86)
+ProgramW6432                   C:\Program Files
+PSModulePath                   C:\Users\xingy\OneDrive\Documents\WindowsPowerShell\Module...
+PUBLIC                         C:\Users\Public
+RegionCode                     NA
+SESSIONNAME                    Console
+SystemDrive                    C:
+SystemRoot                     C:\WINDOWS
+TEMP                           C:\Users\xingy\AppData\Local\Temp
+TMP                            C:\Users\xingy\AppData\Local\Temp
+USERDOMAIN                     LAPTOP-DITBP9DB
+USERDOMAIN_ROAMINGPROFILE      LAPTOP-DITBP9DB
+USERNAME                       xingy
+USERPROFILE                    C:\Users\xingy
+windir                         C:\WINDOWS
+PS C:\Users\xingy> $env: ComputerName
+At line:1 char:1
++ $env: ComputerName
++ ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At line:1 char:7
++ $env: ComputerName
++       ~~~~~~~~~~~~
+Unexpected token 'ComputerName' in expression or statement.
+At line:1 char:1
++ $env: ComputerName
++ ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character.
+Consider using ${} to delimit the name.
+
+At line:1 char:7
++ $env: ComputerName
++       ~~~~~~~~~~~~
+Unexpected token 'ComputerName' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+
+PS C:\Users\xingy> get-variable | more # Powershell specific, not necessarily built in to Windows
+
+Name                           Value
+----                           -----
+$                              ComputerName
+?                              True
+^                              $env:
+args                           {}
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {System.Management.Automation.ParseException: At line:1 ch...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\xingy
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+LASTEXITCODE                   0
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+PID                            868
+PROFILE                        C:\Users\xingy\OneDrive\Documents\WindowsPowerShell\Micros...
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\Users\xingy
+ShellId                        Microsoft.PowerShell
+StackTrace
+true                           True
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+PS C:\Users\xingy> $PsVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      5.1.18362.628
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.18362.628
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+
+
+PS C:\Users\xingy> $ComputerName = "Client01"
+PS C:\Users\xingy> $ComputerName
+Client01
+PS C:\Users\xingy> Write-output "The name of the remote computer is $computerName"
+The name of the remote computer is Client01
+PS C:\Users\xingy> Write-output 'The name of the remote computer is $computerName'
+The name of the remote computer is $computerName
+PS C:\Users\xingy> $credential = get-credential
+PS C:\Users\xingy> $credential
+
+UserName                                       Password
+--------                                       --------
+xingyi.zhang.1@outlook.com System.Security.SecureString
+
+
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411142853
+**********************

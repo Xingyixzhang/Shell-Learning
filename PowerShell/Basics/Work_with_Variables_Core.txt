@@ -1,0 +1,50 @@
+**********************
+PowerShell transcript start
+Start time: 20200411143036
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -WorkingDirectory ~
+Process ID: 16076
+PSVersion: 7.0.0
+PSEdition: Core
+GitCommitId: 7.0.0
+OS: Microsoft Windows 10.0.18362
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\transcripts\Work_with_Variables_Core.txt
+PS C:\Users\xingy> $credential
+PS C:\Users\xingy> $cred = get-credential
+PS C:\Users\xingy> $cred
+
+UserName                                       Password
+--------                                       --------
+xingyi.zhang.1@outlook.com System.Security.SecureString
+
+PS C:\Users\xingy> get-variable -name c*
+
+Name                           Value
+----                           -----
+ConfirmPreference              High
+cred                           System.Management.Automation.PSCredential
+
+PS C:\Users\xingy> $computerName = "Client02"
+PS C:\Users\xingy> write-output "The name of second computer is $computerName"
+The name of second computer is Client02
+PS C:\Users\xingy> gsv -computerName $computerName
+>> TerminatingError(Get-Service): "A parameter cannot be found that matches parameter name 'computerName'."
+
+Get-Service: A parameter cannot be found that matches parameter name 'computerName'.
+
+[91mGet-Service: [91mA parameter cannot be found that matches parameter name 'computerName'.[0m
+PS C:\Users\xingy> # the parameter -ComputerName enables you to collect data and change settigns on >= 1 remote computers.
+PS C:\Users\xingy> stop-transcript
+**********************
+PowerShell transcript end
+End time: 20200411143658
+**********************

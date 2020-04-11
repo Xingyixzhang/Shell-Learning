@@ -15,12 +15,17 @@
 ## PowerShell Basics
 1. Anatomy of a PowerShell Command (Verb-Noun, '-': parameter)
 2. Help in PowerShell
+
 Three Important commands: 
 - Get-Command: Search Installed Commands.
 ```ps1
 # Example:
 PS C:\Users\xingy> get-command -verb Get -Noun *DNS*
 PS C:\Users\xingy> get-command -Name *Fire* -commandType function
+PS C:\Users\xingy> gcm -commandType function | measure-object
+PS C:\Users\xingy> gcm -name *Ip* module Net*
+PS C:\Users\xingy> gcm -name *Ip* module NetTCPIP
+PS C:\Users\xingy> help get-NetIpAddress
 ```
 - Get-Help: Display "how-to" info for commands, similar to 'man' in UNIX/Linux.
 ```ps1

@@ -15,7 +15,20 @@
 ## PowerShell Basics
 1. Anatomy of a PowerShell Command (Verb-Noun, '-': parameter)
 2. Help in PowerShell
-- 3 Important commands: Get-Command; Get-Help; Get-Member
+Three Important commands: 
+- Get-Command: Search Installed Commands.
+```ps1
+# Example:
+PS C:\Users\xingy> get-command -verb Get -Noun *DNS*
+PS C:\Users\xingy> get-command -Name *Fire* -commandType function
+```
+- Get-Help: Display "how-to" info for commands, similar to 'man' in UNIX/Linux.
+```ps1
+PS C:\Users\xingy> get-help -name get-command -detailed
+PS C:\Users\xingy> man - name get-command -detailed
+PS C:\Users\xingy> get-help -name *DNS*
+```
+- Get-Member
 3. Objects and the Pipeline
 ## Gathering Info with PowerShell
 

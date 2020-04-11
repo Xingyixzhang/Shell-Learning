@@ -15,6 +15,7 @@
 ## PowerShell Basics
 1. Anatomy of a PowerShell Command (Verb-Noun, '-': parameter)
 2. Help in PowerShell
+- 3 Important commands: Get-Command; Get-Help; Get-Member
 3. Objects and the Pipeline
 ## Gathering Info with PowerShell
 

@@ -1,0 +1,127 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411163922
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 21384
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Remoting_with_new_CIMSession.txt
+PS C:\Users\xingy> $ComputerName = 'Client01'
+PS C:\Users\xingy> $credential = get-credential
+PS C:\Users\xingy> help new-cimsession
+
+NAME
+    New-CimSession
+
+SYNTAX
+    New-CimSession [[-ComputerName] <string[]>] [[-Credential] <pscredential>] [-Authentication {Default | Digest |
+    Negotiate | Basic | Kerberos | NtlmDomain | CredSsp}] [-Name <string>] [-OperationTimeoutSec <uint32>]
+    [-SkipTestConnection] [-Port <uint32>] [-SessionOption <CimSessionOptions>]  [<CommonParameters>]
+
+    New-CimSession [[-ComputerName] <string[]>] [-CertificateThumbprint <string>] [-Name <string>]
+    [-OperationTimeoutSec <uint32>] [-SkipTestConnection] [-Port <uint32>] [-SessionOption <CimSessionOptions>]
+    [<CommonParameters>]
+
+
+ALIASES
+    ncms
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help New-CimSession -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkId=227967.
+PS C:\Users\xingy> $cimsession = new-cimsession -ComputerName $ComputerName -Credential $credential
+new-cimsession : The WinRM client cannot process the request. If the authentication scheme is different from Kerberos, 
+or if the client computer is not joined to a domain, then HTTPS transport must be used or the destination machine must 
+be added to the TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the 
+TrustedHosts list might not be authenticated. You can get more information about that by running the following command: 
+winrm help config.
+At line:1 char:15
++ ... imsession = new-cimsession -ComputerName $ComputerName -Credential $c ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotEnabled: (:) [New-CimSession], CimException
+    + FullyQualifiedErrorId : HRESULT 0x803380e4,Microsoft.Management.Infrastructure.CimCmdlets.NewCimSessionCommand
+    + PSComputerName        : Client01
+new-cimsession : The WinRM client cannot process the request. If the authentication scheme is different from Kerberos,
+or if the client computer is not joined to a domain, then HTTPS transport must be used or the destination machine must
+be added to the TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note that computers in
+the TrustedHosts list might not be authenticated. You can get more information about that by running the following
+command: winrm help config.
+At line:1 char:15
++ ... imsession = new-cimsession -ComputerName $ComputerName -Credential $c ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotEnabled: (:) [New-CimSession], CimException
+    + FullyQualifiedErrorId : HRESULT 0x803380e4,Microsoft.Management.Infrastructure.CimCmdlets.NewCimSessionCommand
+    + PSComputerName        : Client01
+
+PS C:\Users\xingy> get-cimcession
+get-cimcession : The term 'get-cimcession' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ get-cimcession
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-cimcession:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+get-cimcession : The term 'get-cimcession' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ get-cimcession
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-cimcession:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\xingy> get-cimsession
+PS C:\Users\xingy> help get-DNSClientServerAddress
+
+NAME
+    Get-DnsClientServerAddress
+
+SYNTAX
+    Get-DnsClientServerAddress [[-InterfaceAlias] <string[]>] [-InterfaceIndex <uint32[]>] [-AddressFamily {IPv4 |
+    IPv6}] [-CimSession <CimSession[]>] [-ThrottleLimit <int>] [-AsJob]  [<CommonParameters>]
+
+
+ALIASES
+    None
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+PS C:\Users\xingy> get-DNSClientServerAddress -CimSession $cimsession
+>> TerminatingError(Get-DnsClientServerAddress): "Cannot validate argument on parameter 'CimSession'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Get-DnsClientServerAddress : Cannot validate argument on parameter 'CimSession'. The argument is null or empty. Provide 
+an argument that is not null or empty, and then try the command again.
+At line:1 char:40
++ get-DNSClientServerAddress -CimSession $cimsession
++                                        ~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-DnsClientServerAddress], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Get-DnsClientServerAddress
+Get-DnsClientServerAddress : Cannot validate argument on parameter 'CimSession'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At line:1 char:40
++ get-DNSClientServerAddress -CimSession $cimsession
++                                        ~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-DnsClientServerAddress], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Get-DnsClientServerAddress
+
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411164315
+**********************

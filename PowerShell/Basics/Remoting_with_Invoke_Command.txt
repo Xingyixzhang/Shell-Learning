@@ -1,0 +1,188 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411161131
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13956
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Remoting_with_Invoke_Command.txt
+PS C:\Users\xingy> help Invoke-command
+
+NAME
+    Invoke-Command
+
+SYNTAX
+    Invoke-Command [-ScriptBlock] <scriptblock> [-NoNewScope] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+    [<CommonParameters>]
+
+    Invoke-Command [[-Session] <PSSession[]>] [-ScriptBlock] <scriptblock> [-ThrottleLimit <int>] [-AsJob]
+    [-HideComputerName] [-JobName <string>] [-InputObject <psobject>] [-ArgumentList <Object[]>]  [<CommonParameters>]
+
+    Invoke-Command [[-Session] <PSSession[]>] [-FilePath] <string> [-ThrottleLimit <int>] [-AsJob] [-HideComputerName]
+    [-JobName <string>] [-InputObject <psobject>] [-ArgumentList <Object[]>]  [<CommonParameters>]
+
+    Invoke-Command [[-ComputerName] <string[]>] [-FilePath] <string> [-Credential <pscredential>] [-Port <int>]
+    [-UseSSL] [-ConfigurationName <string>] [-ApplicationName <string>] [-ThrottleLimit <int>] [-AsJob]
+    [-InDisconnectedSession] [-SessionName <string[]>] [-HideComputerName] [-JobName <string>] [-SessionOption
+    <PSSessionOption>] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp |
+    Digest | Kerberos}] [-EnableNetworkAccess] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+    [<CommonParameters>]
+
+    Invoke-Command [[-ComputerName] <string[]>] [-ScriptBlock] <scriptblock> [-Credential <pscredential>] [-Port
+    <int>] [-UseSSL] [-ConfigurationName <string>] [-ApplicationName <string>] [-ThrottleLimit <int>] [-AsJob]
+    [-InDisconnectedSession] [-SessionName <string[]>] [-HideComputerName] [-JobName <string>] [-SessionOption
+    <PSSessionOption>] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp |
+    Digest | Kerberos}] [-EnableNetworkAccess] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+    [-CertificateThumbprint <string>]  [<CommonParameters>]
+
+    Invoke-Command [[-ConnectionUri] <uri[]>] [-ScriptBlock] <scriptblock> [-Credential <pscredential>]
+    [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-InDisconnectedSession] [-HideComputerName]
+    [-JobName <string>] [-AllowRedirection] [-SessionOption <PSSessionOption>] [-Authentication {Default | Basic |
+    Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-EnableNetworkAccess] [-InputObject
+    <psobject>] [-ArgumentList <Object[]>] [-CertificateThumbprint <string>]  [<CommonParameters>]
+
+    Invoke-Command [[-ConnectionUri] <uri[]>] [-FilePath] <string> [-Credential <pscredential>] [-ConfigurationName
+    <string>] [-ThrottleLimit <int>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <string>]
+    [-AllowRedirection] [-SessionOption <PSSessionOption>] [-Authentication {Default | Basic | Negotiate |
+    NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-EnableNetworkAccess] [-InputObject <psobject>]
+    [-ArgumentList <Object[]>]  [<CommonParameters>]
+
+    Invoke-Command [-VMId] <guid[]> [-ScriptBlock] <scriptblock> -Credential <pscredential> [-ConfigurationName
+    <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+     [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <scriptblock> -Credential <pscredential> -VMName <string[]> [-ConfigurationName
+    <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+     [<CommonParameters>]
+
+    Invoke-Command [-VMId] <guid[]> [-FilePath] <string> -Credential <pscredential> [-ConfigurationName <string>]
+    [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+    [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <string> -Credential <pscredential> -VMName <string[]> [-ConfigurationName <string>]
+    [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+    [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <scriptblock> -ContainerId <string[]> [-ConfigurationName <string>] [-ThrottleLimit
+    <int>] [-AsJob] [-HideComputerName] [-JobName <string>] [-RunAsAdministrator] [-InputObject <psobject>]
+    [-ArgumentList <Object[]>]  [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <string> -ContainerId <string[]> [-ConfigurationName <string>] [-ThrottleLimit <int>]
+    [-AsJob] [-HideComputerName] [-JobName <string>] [-RunAsAdministrator] [-InputObject <psobject>] [-ArgumentList
+    <Object[]>]  [<CommonParameters>]
+
+
+ALIASES
+    icm
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Invoke-Command -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkID=135225.
+PS C:\Users\xingy> $ComputerName = "ClientB"
+PS C:\Users\xingy> $credential = get-credential
+PS C:\Users\xingy> Invoke-command -ComputerName $ComputerName -Credential $credential -ScriptBlock {gsv -ComputerName $ComputerName }
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM client cannot process 
+the request. If the authentication scheme is different from Kerberos, or if the client computer is not joined to a 
+domain, then HTTPS transport must be used or the destination machine must be added to the TrustedHosts configuration 
+setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be 
+authenticated. You can get more information about that by running the following command: winrm help config. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM
+client cannot process the request. If the authentication scheme is different from Kerberos, or if the
+client computer is not joined to a domain, then HTTPS transport must be used or the destination machine
+must be added to the TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note
+that computers in the TrustedHosts list might not be authenticated. You can get more information about
+that by running the following command: winrm help config. For more information, see the
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+PS C:\Users\xingy> Invoke-command -ComputerName $ComputerName -Credential $credential -ScriptBlock {gsv -ComputerName $using:ComputerName }
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM client cannot process 
+the request. If the authentication scheme is different from Kerberos, or if the client computer is not joined to a 
+domain, then HTTPS transport must be used or the destination machine must be added to the TrustedHosts configuration 
+setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be 
+authenticated. You can get more information about that by running the following command: winrm help config. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM
+client cannot process the request. If the authentication scheme is different from Kerberos, or if the
+client computer is not joined to a domain, then HTTPS transport must be used or the destination machine
+must be added to the TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note
+that computers in the TrustedHosts list might not be authenticated. You can get more information about
+that by running the following command: winrm help config. For more information, see the
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+PS C:\Users\xingy> $data = Invoke-command -ComputerName $ComputerName -Credential $credential -ScriptBlock {gsv -ComputerName $using:ComputerName }
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM client cannot process 
+the request. If the authentication scheme is different from Kerberos, or if the client computer is not joined to a 
+domain, then HTTPS transport must be used or the destination machine must be added to the TrustedHosts configuration 
+setting. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be 
+authenticated. You can get more information about that by running the following command: winrm help config. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+[ClientB] Connecting to remote server ClientB failed with the following error message : The WinRM
+client cannot process the request. If the authentication scheme is different from Kerberos, or if the
+client computer is not joined to a domain, then HTTPS transport must be used or the destination machine
+must be added to the TrustedHosts configuration setting. Use winrm.cmd to configure TrustedHosts. Note
+that computers in the TrustedHosts list might not be authenticated. You can get more information about
+that by running the following command: winrm help config. For more information, see the
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (ClientB:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : ServerNotTrusted,PSSessionStateBroken
+PS C:\Users\xingy> $data | gm
+>> CommandInvocation(Out-Null): "Out-Null"
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:9
++ $data | gm
++         ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:9
++ $data | gm
++         ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+
+PS C:\Users\xingy> invoke-command -ComputerName DC01 -cred {get-credential} -ScriptBlock { get-ADUser -Identity felixb | format-list }
+>> TerminatingError(Invoke-Command): "Cannot evaluate parameter 'Credential' because its argument is specified as a script block and there is no input. A script block cannot be evaluated without input."
+Invoke-Command : Cannot evaluate parameter 'Credential' because its argument is specified as a script block and there 
+is no input. A script block cannot be evaluated without input.
+At line:1 char:41
++ invoke-command -ComputerName DC01 -cred {get-credential} -ScriptBlock ...
++                                         ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : MetadataError: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : ScriptBlockArgumentNoInput,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot evaluate parameter 'Credential' because its argument is specified as a script
+block and there is no input. A script block cannot be evaluated without input.
+At line:1 char:41
++ invoke-command -ComputerName DC01 -cred {get-credential} -ScriptBlock ...
++                                         ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : MetadataError: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : ScriptBlockArgumentNoInput,Microsoft.PowerShell.Commands.InvokeCommandCom
+   mand
+
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411163746
+**********************

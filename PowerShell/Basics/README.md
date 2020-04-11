@@ -52,7 +52,9 @@ PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
 3. Objects and the Pipeline: send output of a command into a secnd command.
 - Pipelining in PowerShell: Get sth, (Sort) sth, Do sth.
 ## Gathering Info with PowerShell
-
+#### Category 1: Computer and Hardware
+#### Category 2: Networking
+#### Category 3: Files and Folders
 ## Remoting with PowerShell
 
 ## Build a User Inventory Script with PowerShell

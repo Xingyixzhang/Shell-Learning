@@ -14,3 +14,7 @@ PS C:\Users\xingy> notepad .\transcripts\history.txt
 PS C:\Users\xingy> start-transcript -path .\transcripts\transcript1.txt -append
 Transcript started, output file is .\transcripts\transcript1.txt
 PS C:\Users\xingy> gsv | where-object -property status -eq Stopped
+PS C:\Users\xingy> stop-transcript
+Transcript stopped, output file is C:\Users\xingy\transcripts\transcript1.txt
+PS C:\Users\xingy> notepad .\Transcripts\transcript1.txt
+# (NotePad opens and Displays app info and tracked your command&output history.)

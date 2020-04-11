@@ -1,0 +1,724 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411095653
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19980
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\GatherNetworkInfo.txt
+PS C:\Users\xingy> ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::14d:3ac8:967c:5805%2
+   IPv4 Address. . . . . . . . . . . : 100.107.99.203
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 100.107.0.40
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+PS C:\Users\xingy> ipconfig / all
+
+Error: unrecognized or incomplete command line.
+
+USAGE:
+    ipconfig [/allcompartments] [/? | /all |
+                                 /renew [adapter] | /release [adapter] |
+                                 /renew6 [adapter] | /release6 [adapter] |
+                                 /flushdns | /displaydns | /registerdns |
+                                 /showclassid adapter |
+                                 /setclassid adapter [classid] |
+                                 /showclassid6 adapter |
+                                 /setclassid6 adapter [classid] ]
+
+where
+    adapter             Connection name
+                       (wildcard characters * and ? allowed, see examples)
+
+    Options:
+       /?               Display this help message
+       /all             Display full configuration information.
+       /release         Release the IPv4 address for the specified adapter.
+       /release6        Release the IPv6 address for the specified adapter.
+       /renew           Renew the IPv4 address for the specified adapter.
+       /renew6          Renew the IPv6 address for the specified adapter.
+       /flushdns        Purges the DNS Resolver cache.
+       /registerdns     Refreshes all DHCP leases and re-registers DNS names
+       /displaydns      Display the contents of the DNS Resolver Cache.
+       /showclassid     Displays all the dhcp class IDs allowed for adapter.
+       /setclassid      Modifies the dhcp class id.
+       /showclassid6    Displays all the IPv6 DHCP class IDs allowed for adapter.
+       /setclassid6     Modifies the IPv6 DHCP class id.
+
+
+The default is to display only the IP address, subnet mask and
+default gateway for each adapter bound to TCP/IP.
+
+For Release and Renew, if no adapter name is specified, then the IP address
+leases for all adapters bound to TCP/IP will be released or renewed.
+
+For Setclassid and Setclassid6, if no ClassId is specified, then the ClassId is removed.
+
+Examples:
+    > ipconfig                       ... Show information
+    > ipconfig /all                  ... Show detailed information
+    > ipconfig /renew                ... renew all adapters
+    > ipconfig /renew EL*            ... renew any connection that has its
+                                         name starting with EL
+    > ipconfig /release *Con*        ... release all matching connections,
+                                         eg. "Wired Ethernet Connection 1" or
+                                             "Wired Ethernet Connection 2"
+    > ipconfig /allcompartments      ... Show information about all
+                                         compartments
+    > ipconfig /allcompartments /all ... Show detailed information about all
+                                         compartments
+PS C:\Users\xingy> ipconfig | gm
+
+
+   TypeName: System.String
+
+Name             MemberType            Definition
+----             ----------            ----------
+Clone            Method                System.Object Clone(), System.Object ICloneable.Cl...
+CompareTo        Method                int CompareTo(System.Object value), int CompareTo(...
+Contains         Method                bool Contains(string value)
+CopyTo           Method                void CopyTo(int sourceIndex, char[] destination, i...
+EndsWith         Method                bool EndsWith(string value), bool EndsWith(string ...
+Equals           Method                bool Equals(System.Object obj), bool Equals(string...
+GetEnumerator    Method                System.CharEnumerator GetEnumerator(), System.Coll...
+GetHashCode      Method                int GetHashCode()
+GetType          Method                type GetType()
+GetTypeCode      Method                System.TypeCode GetTypeCode(), System.TypeCode ICo...
+IndexOf          Method                int IndexOf(char value), int IndexOf(char value, i...
+IndexOfAny       Method                int IndexOfAny(char[] anyOf), int IndexOfAny(char[...
+Insert           Method                string Insert(int startIndex, string value)
+IsNormalized     Method                bool IsNormalized(), bool IsNormalized(System.Text...
+LastIndexOf      Method                int LastIndexOf(char value), int LastIndexOf(char ...
+LastIndexOfAny   Method                int LastIndexOfAny(char[] anyOf), int LastIndexOfA...
+Normalize        Method                string Normalize(), string Normalize(System.Text.N...
+PadLeft          Method                string PadLeft(int totalWidth), string PadLeft(int...
+PadRight         Method                string PadRight(int totalWidth), string PadRight(i...
+Remove           Method                string Remove(int startIndex, int count), string R...
+Replace          Method                string Replace(char oldChar, char newChar), string...
+Split            Method                string[] Split(Params char[] separator), string[] ...
+StartsWith       Method                bool StartsWith(string value), bool StartsWith(str...
+Substring        Method                string Substring(int startIndex), string Substring...
+ToBoolean        Method                bool IConvertible.ToBoolean(System.IFormatProvider...
+ToByte           Method                byte IConvertible.ToByte(System.IFormatProvider pr...
+ToChar           Method                char IConvertible.ToChar(System.IFormatProvider pr...
+ToCharArray      Method                char[] ToCharArray(), char[] ToCharArray(int start...
+ToDateTime       Method                datetime IConvertible.ToDateTime(System.IFormatPro...
+ToDecimal        Method                decimal IConvertible.ToDecimal(System.IFormatProvi...
+ToDouble         Method                double IConvertible.ToDouble(System.IFormatProvide...
+ToInt16          Method                int16 IConvertible.ToInt16(System.IFormatProvider ...
+ToInt32          Method                int IConvertible.ToInt32(System.IFormatProvider pr...
+ToInt64          Method                long IConvertible.ToInt64(System.IFormatProvider p...
+ToLower          Method                string ToLower(), string ToLower(cultureinfo culture)
+ToLowerInvariant Method                string ToLowerInvariant()
+ToSByte          Method                sbyte IConvertible.ToSByte(System.IFormatProvider ...
+ToSingle         Method                float IConvertible.ToSingle(System.IFormatProvider...
+ToString         Method                string ToString(), string ToString(System.IFormatP...
+ToType           Method                System.Object IConvertible.ToType(type conversionT...
+ToUInt16         Method                uint16 IConvertible.ToUInt16(System.IFormatProvide...
+ToUInt32         Method                uint32 IConvertible.ToUInt32(System.IFormatProvide...
+ToUInt64         Method                uint64 IConvertible.ToUInt64(System.IFormatProvide...
+ToUpper          Method                string ToUpper(), string ToUpper(cultureinfo culture)
+ToUpperInvariant Method                string ToUpperInvariant()
+Trim             Method                string Trim(Params char[] trimChars), string Trim()
+TrimEnd          Method                string TrimEnd(Params char[] trimChars)
+TrimStart        Method                string TrimStart(Params char[] trimChars)
+Chars            ParameterizedProperty char Chars(int index) {get;}
+Length           Property              int Length {get;}
+
+
+PS C:\Users\xingy> # Notice that there is only one property: length. Indicating that even though we can run the previous commands, they are not true PowerShell commands and they are not sending data over as objects that we can work with. 
+PS C:\Users\xingy> # In order to work with individual values, we need to use powershell commands:
+PS C:\Users\xingy> gcm get-NetIP*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-NetIPAddress                                   1.0.0.0    NetTCPIP
+Function        Get-NetIPConfiguration                             1.0.0.0    NetTCPIP
+Function        Get-NetIPHttpsConfiguration                        1.0.0.0    NetworkTran...
+Function        Get-NetIPHttpsState                                1.0.0.0    NetworkTran...
+Function        Get-NetIPInterface                                 1.0.0.0    NetTCPIP
+Function        Get-NetIPsecDospSetting                            2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeCryptoSet                      2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeRule                           2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeSA                             2.0.0.0    NetSecurity
+Function        Get-NetIPsecPhase1AuthSet                          2.0.0.0    NetSecurity
+Function        Get-NetIPsecPhase2AuthSet                          2.0.0.0    NetSecurity
+Function        Get-NetIPsecQuickModeCryptoSet                     2.0.0.0    NetSecurity
+Function        Get-NetIPsecQuickModeSA                            2.0.0.0    NetSecurity
+Function        Get-NetIPsecRule                                   2.0.0.0    NetSecurity
+Function        Get-NetIPv4Protocol                                1.0.0.0    NetTCPIP
+Function        Get-NetIPv6Protocol                                1.0.0.0    NetTCPIP
+
+
+PS C:\Users\xingy> get-NetIPaddress
+
+
+IPAddress         : fe80::e4b6:417e:d0bc:a9a9%4
+InterfaceIndex    : 4
+InterfaceAlias    : Local Area Connection* 2
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::c464:d3f3:3e6c:149%17
+InterfaceIndex    : 17
+InterfaceAlias    : Bluetooth Network Connection
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::a030:2883:be16:1d11%14
+InterfaceIndex    : 14
+InterfaceAlias    : Local Area Connection* 1
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::5462:9219:8299:356b%10
+InterfaceIndex    : 10
+InterfaceAlias    : Ethernet
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::14d:3ac8:967c:5805%2
+InterfaceIndex    : 2
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : ::1
+InterfaceIndex    : 1
+InterfaceAlias    : Loopback Pseudo-Interface 1
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 128
+PrefixOrigin      : WellKnown
+SuffixOrigin      : WellKnown
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.169.169
+InterfaceIndex    : 4
+InterfaceAlias    : Local Area Connection* 2
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.1.73
+InterfaceIndex    : 17
+InterfaceAlias    : Bluetooth Network Connection
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.29.17
+InterfaceIndex    : 14
+InterfaceAlias    : Local Area Connection* 1
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.53.107
+InterfaceIndex    : 10
+InterfaceAlias    : Ethernet
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 100.107.99.203
+InterfaceIndex    : 2
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Preferred
+ValidLifetime     : 11:12:37
+PreferredLifetime : 11:12:37
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 127.0.0.1
+InterfaceIndex    : 1
+InterfaceAlias    : Loopback Pseudo-Interface 1
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 8
+PrefixOrigin      : WellKnown
+SuffixOrigin      : WellKnown
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+
+PS C:\Users\xingy> get-NetIPConfiguration
+
+
+InterfaceAlias       : Wi-Fi
+InterfaceIndex       : 2
+InterfaceDescription : Realtek RTL8822BE 802.11ac PCIe Adapter
+NetProfile.Name      : Boingo_2.4GHz 3
+IPv4Address          : 100.107.99.203
+IPv6DefaultGateway   :
+IPv4DefaultGateway   : 100.107.0.40
+DNSServer            : 100.107.0.31
+                       100.107.0.32
+
+InterfaceAlias       : Bluetooth Network Connection
+InterfaceIndex       : 17
+InterfaceDescription : Bluetooth Device (Personal Area Network)
+NetAdapter.Status    : Disconnected
+
+InterfaceAlias       : Ethernet
+InterfaceIndex       : 10
+InterfaceDescription : Realtek PCIe GbE Family Controller
+NetAdapter.Status    : Disconnected
+
+
+
+PS C:\Users\xingy> gcm get-*DNS*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-DnsClient                                      1.0.0.0    DnsClient
+Function        Get-DnsClientCache                                 1.0.0.0    DnsClient
+Function        Get-DnsClientGlobalSetting                         1.0.0.0    DnsClient
+Function        Get-DnsClientNrptGlobal                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptPolicy                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Get-DnsClientServerAddress                         1.0.0.0    DnsClient
+Function        Get-NetDnsTransitionConfiguration                  1.0.0.0    NetworkTran...
+Function        Get-NetDnsTransitionMonitoring                     1.0.0.0    NetworkTran...
+
+
+PS C:\Users\xingy> gcm get-DNSClient*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-DnsClient                                      1.0.0.0    DnsClient
+Function        Get-DnsClientCache                                 1.0.0.0    DnsClient
+Function        Get-DnsClientGlobalSetting                         1.0.0.0    DnsClient
+Function        Get-DnsClientNrptGlobal                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptPolicy                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Get-DnsClientServerAddress                         1.0.0.0    DnsClient
+
+
+PS C:\Users\xingy> get-DNSClient
+
+InterfaceAlias               Interface ConnectionSpecificSuffix ConnectionSpecificSuffix Reg
+                             Index                              SearchList               ist
+                                                                                         erT
+                                                                                         his
+                                                                                         Con
+                                                                                         nec
+                                                                                         tio
+                                                                                         nsA
+                                                                                         ddr
+                                                                                         ess
+--------------               --------- ------------------------ ------------------------ ---
+Ethernet                            10                          {}                       Tru
+Local Area Connection* 1            14                          {}                       Tru
+Local Area Connection* 2             4                          {}                       Tru
+Wi-Fi                                2                          {}                       Tru
+Bluetooth Network Connection        17                          {}                       Tru
+Loopback Pseudo-Interface 1          1                          {}                       Tru
+
+
+PS C:\Users\xingy> get-DNSClientCache
+
+Entry                     RecordName                Record Status    Section TimeTo Data   D
+                                                    Type                     Live   Length a
+                                                                                           t
+                                                                                           a
+-----                     ----------                ------ ------    ------- ------ ------ -
+array607.prod.do.dsp.m... array607.prod.do.dsp.m... A      Success   Answer    1000      4 4
+vid20.pluralsight.com     vid20.pluralsight.com     CNAME  Success   Answer    1273      8 c
+vid20.pluralsight.com     cs765161632.wpc.zetacd... A      Success   Answer    1273      4 1
+platform.bing.com         platform.bing.com         CNAME  Success   Answer       7      8 p
+platform.bing.com         platform-bing-com.a-00... CNAME  Success   Answer       7      8 d
+platform.bing.com         dual-a-0001.a-msedge.net  A      Success   Answer       7      4 2
+platform.bing.com         dual-a-0001.a-msedge.net  A      Success   Answer       7      4 1
+via.boingohotspot.net     via.boingohotspot.net     A      Success   Answer   83396      4 1
+via.boingohotspot.net     via.boingohotspot.net     A      Success   Answer   83396      4 1
+vid.pluralsight.com       vid.pluralsight.com       CNAME  Success   Answer    1273      8 c
+vid.pluralsight.com       cs765161632.wpc.zetacd... A      Success   Answer    1273      4 1
+trouter2-ussc-a.troute... trouter2-ussc-a.troute... CNAME  Success   Answer       1      8 t
+trouter2-ussc-a.troute... trouter2-ussc-a.clouda... AAAA   Success   Answer       1     16 2
+ms-vsliveshare.gallery... ms-vsliveshare.gallery... A      Success   Answer     766      4 1
+d3cv4a9a9wh0bt.cloudfr... d3cv4a9a9wh0bt.cloudfr... A      Success   Answer      45      4 1
+d3cv4a9a9wh0bt.cloudfr... d3cv4a9a9wh0bt.cloudfr... A      Success   Answer      45      4 1
+d3cv4a9a9wh0bt.cloudfr... d3cv4a9a9wh0bt.cloudfr... A      Success   Answer      45      4 1
+d3cv4a9a9wh0bt.cloudfr... d3cv4a9a9wh0bt.cloudfr... A      Success   Answer      45      4 1
+github.githubassets.com   github.githubassets.com   A      Success   Answer    2344      4 1
+github.githubassets.com   github.githubassets.com   A      Success   Answer    2344      4 1
+github.githubassets.com   github.githubassets.com   A      Success   Answer    2344      4 1
+github.githubassets.com   github.githubassets.com   A      Success   Answer    2344      4 1
+
+
+PS C:\Users\xingy> get-DNSClientServerAddress
+
+InterfaceAlias               Interface Address ServerAddresses
+                             Index     Family
+--------------               --------- ------- ---------------
+Ethernet                            10 IPv4    {40.23.1.12}
+Ethernet                            10 IPv6    {}
+Local Area Connection* 1            14 IPv4    {}
+Local Area Connection* 1            14 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:...
+Local Area Connection* 2             4 IPv4    {}
+Local Area Connection* 2             4 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:...
+Wi-Fi                                2 IPv4    {100.107.0.31, 100.107.0.32}
+Wi-Fi                                2 IPv6    {}
+Bluetooth Network Connection        17 IPv4    {}
+Bluetooth Network Connection        17 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:...
+Loopback Pseudo-Interface 1          1 IPv4    {}
+Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:...
+
+
+PS C:\Users\xingy> gcm *smb*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           blsmba ->                                          2.0.0.0    SmbShare
+Alias           cssmbo ->                                          2.0.0.0    SmbShare
+Alias           cssmbse ->                                         2.0.0.0    SmbShare
+Alias           dsmbd ->                                           2.0.0.0    SmbShare
+Alias           esmbd ->                                           2.0.0.0    SmbShare
+Alias           grsmba ->                                          2.0.0.0    SmbShare
+Alias           gsmba ->                                           2.0.0.0    SmbShare
+Alias           gsmbb ->                                           2.0.0.0    SmbShare
+Alias           gsmbc ->                                           2.0.0.0    SmbShare
+Alias           gsmbcc ->                                          2.0.0.0    SmbShare
+Alias           gsmbcn ->                                          2.0.0.0    SmbShare
+Alias           gsmbd ->                                           2.0.0.0    SmbShare
+Alias           gsmbgm ->                                          2.0.0.0    SmbShare
+Alias           gsmbm ->                                           2.0.0.0    SmbShare
+Alias           gsmbmc ->                                          2.0.0.0    SmbShare
+Alias           gsmbo ->                                           2.0.0.0    SmbShare
+Alias           gsmbs ->                                           2.0.0.0    SmbShare
+Alias           gsmbsc ->                                          2.0.0.0    SmbShare
+Alias           gsmbse ->                                          2.0.0.0    SmbShare
+Alias           gsmbsn ->                                          2.0.0.0    SmbShare
+Alias           gsmbt ->                                           2.0.0.0    SmbShare
+Alias           gsmbw ->                                           2.0.0.0    SmbWitness
+Alias           Move-SmbClient                                     2.0.0.0    SmbWitness
+Alias           msmbw ->                                           2.0.0.0    SmbWitness
+Alias           nsmbgm ->                                          2.0.0.0    SmbShare
+Alias           nsmbm ->                                           2.0.0.0    SmbShare
+Alias           nsmbs ->                                           2.0.0.0    SmbShare
+Alias           nsmbt ->                                           2.0.0.0    SmbShare
+Alias           rksmba ->                                          2.0.0.0    SmbShare
+Alias           rsmbb ->                                           2.0.0.0    SmbShare
+Alias           rsmbgm ->                                          2.0.0.0    SmbShare
+Alias           rsmbm ->                                           2.0.0.0    SmbShare
+Alias           rsmbs ->                                           2.0.0.0    SmbShare
+Alias           rsmbt ->                                           2.0.0.0    SmbShare
+Alias           ssmbb ->                                           2.0.0.0    SmbShare
+Alias           ssmbcc ->                                          2.0.0.0    SmbShare
+Alias           ssmbp ->                                           2.0.0.0    SmbShare
+Alias           ssmbs ->                                           2.0.0.0    SmbShare
+Alias           ssmbsc ->                                          2.0.0.0    SmbShare
+Alias           udsmbmc ->                                         2.0.0.0    SmbShare
+Alias           ulsmba ->                                          2.0.0.0    SmbShare
+Function        Block-SmbShareAccess                               2.0.0.0    SmbShare
+Function        Close-SmbOpenFile                                  2.0.0.0    SmbShare
+Function        Close-SmbSession                                   2.0.0.0    SmbShare
+Function        Disable-SmbDelegation                              2.0.0.0    SmbShare
+Function        Enable-SmbDelegation                               2.0.0.0    SmbShare
+Function        Get-SmbBandWidthLimit                              2.0.0.0    SmbShare
+Function        Get-SmbClientConfiguration                         2.0.0.0    SmbShare
+Function        Get-SmbClientNetworkInterface                      2.0.0.0    SmbShare
+Function        Get-SmbConnection                                  2.0.0.0    SmbShare
+Function        Get-SmbDelegation                                  2.0.0.0    SmbShare
+Function        Get-SmbGlobalMapping                               2.0.0.0    SmbShare
+Function        Get-SmbMapping                                     2.0.0.0    SmbShare
+Function        Get-SmbMultichannelConnection                      2.0.0.0    SmbShare
+Function        Get-SmbMultichannelConstraint                      2.0.0.0    SmbShare
+Function        Get-SmbOpenFile                                    2.0.0.0    SmbShare
+Function        Get-SmbServerConfiguration                         2.0.0.0    SmbShare
+Function        Get-SmbServerNetworkInterface                      2.0.0.0    SmbShare
+Function        Get-SmbSession                                     2.0.0.0    SmbShare
+Function        Get-SmbShare                                       2.0.0.0    SmbShare
+Function        Get-SmbShareAccess                                 2.0.0.0    SmbShare
+Function        Get-SmbWitnessClient                               2.0.0.0    SmbWitness
+Function        Grant-SmbShareAccess                               2.0.0.0    SmbShare
+Function        Move-SmbWitnessClient                              2.0.0.0    SmbWitness
+Function        New-SmbGlobalMapping                               2.0.0.0    SmbShare
+Function        New-SmbMapping                                     2.0.0.0    SmbShare
+Function        New-SmbMultichannelConstraint                      2.0.0.0    SmbShare
+Function        New-SmbShare                                       2.0.0.0    SmbShare
+Function        Remove-SmbBandwidthLimit                           2.0.0.0    SmbShare
+Function        Remove-SmbGlobalMapping                            2.0.0.0    SmbShare
+Function        Remove-SmbMapping                                  2.0.0.0    SmbShare
+Function        Remove-SmbMultichannelConstraint                   2.0.0.0    SmbShare
+Function        Remove-SmbShare                                    2.0.0.0    SmbShare
+Function        Revoke-SmbShareAccess                              2.0.0.0    SmbShare
+Function        Set-SmbBandwidthLimit                              2.0.0.0    SmbShare
+Function        Set-SmbClientConfiguration                         2.0.0.0    SmbShare
+Function        Set-SmbPathAcl                                     2.0.0.0    SmbShare
+Function        Set-SmbServerConfiguration                         2.0.0.0    SmbShare
+Function        Set-SmbShare                                       2.0.0.0    SmbShare
+Function        Unblock-SmbShareAccess                             2.0.0.0    SmbShare
+Function        Update-SmbMultichannelConnection                   2.0.0.0    SmbShare
+
+
+PS C:\Users\xingy> # To map a network drive, which uses SMB (Simple Message Block):
+PS C:\Users\xingy> gcm *smbMapping
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-SmbMapping                                     2.0.0.0    SmbShare
+Function        New-SmbMapping                                     2.0.0.0    SmbShare
+Function        Remove-SmbMapping                                  2.0.0.0    SmbShare
+
+
+PS C:\Users\xingy> help New-smbmapping -examples
+
+NAME
+    New-SmbMapping
+
+ALIASES
+    nsmbm
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying
+    only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use
+    Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help New-SmbMapping
+    -Online" or
+           go to http://go.microsoft.com/fwlink/?LinkID=241956.
+PS C:\Users\xingy> update-help
+update-help : Failed to update Help for the module(s) : 
+'AppBackgroundTask, Appx, BitLocker, BitsTransfer, CimCmdlets, DirectAccessClientComponents, Dism, DnsClient, 
+EventTracingManagement, IISAdministration, International, iSCSI, ISE, Kds, Microsoft.PowerShell.Archive, 
+Microsoft.PowerShell.Core, Microsoft.PowerShell.Diagnostics, Microsoft.PowerShell.Host, 
+Microsoft.PowerShell.LocalAccounts, Microsoft.PowerShell.Management, Microsoft.PowerShell.Security, 
+Microsoft.PowerShell.Utility, Microsoft.WSMan.Management, MMAgent, MsDtc, NetAdapter, NetConnection, 
+NetEventPacketCapture, NetLbfo, NetNat, NetQos, NetSecurity, NetSwitchTeam, NetTCPIP, NetworkConnectivityStatus, 
+NetworkSwitchManager, NetworkTransition, PackageManagement, PcsvDevice, PKI, PnpDevice, PowerShellGet, PrintManagement, 
+ProcessMitigations, Provisioning, PSDesiredStateConfiguration, PSReadline, PSScheduledJob, PSWorkflow, 
+PSWorkflowUtility, ScheduledTasks, SecureBoot, SmbShare, SmbWitness, StartLayout, Storage, TLS, TroubleshootingPack, 
+TrustedPlatformModule, VpnClient, Wdac, WebAdministration, WindowsErrorReporting, WindowsSearch, WindowsUpdate'
+Access is denied. The command could not update Help topics for the Windows PowerShell core modules, or for any modules 
+in the $pshome\Modules directory. To update these Help topics, start Windows PowerShell by using the "Run as 
+Administrator" command, and try running Update-Help again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UpdatableHelpSystemRequiresElevation,Microsoft.PowerShell.Commands.UpdateHelpCommand
+update-help : Failed to update Help for the module(s) :
+'AppBackgroundTask, Appx, BitLocker, BitsTransfer, CimCmdlets,
+DirectAccessClientComponents, Dism, DnsClient, EventTracingManagement, IISAdministration,
+International, iSCSI, ISE, Kds, Microsoft.PowerShell.Archive, Microsoft.PowerShell.Core,
+Microsoft.PowerShell.Diagnostics, Microsoft.PowerShell.Host,
+Microsoft.PowerShell.LocalAccounts, Microsoft.PowerShell.Management,
+Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility, Microsoft.WSMan.Management,
+MMAgent, MsDtc, NetAdapter, NetConnection, NetEventPacketCapture, NetLbfo, NetNat, NetQos,
+NetSecurity, NetSwitchTeam, NetTCPIP, NetworkConnectivityStatus, NetworkSwitchManager,
+NetworkTransition, PackageManagement, PcsvDevice, PKI, PnpDevice, PowerShellGet,
+PrintManagement, ProcessMitigations, Provisioning, PSDesiredStateConfiguration, PSReadline,
+PSScheduledJob, PSWorkflow, PSWorkflowUtility, ScheduledTasks, SecureBoot, SmbShare,
+SmbWitness, StartLayout, Storage, TLS, TroubleshootingPack, TrustedPlatformModule,
+VpnClient, Wdac, WebAdministration, WindowsErrorReporting, WindowsSearch, WindowsUpdate'
+Access is denied. The command could not update Help topics for the Windows PowerShell core
+modules, or for any modules in the $pshome\Modules directory. To update these Help topics,
+start Windows PowerShell by using the "Run as Administrator" command, and try running
+Update-Help again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UpdatableHelpSystemRequiresElevation,Microsoft.PowerShell.Com
+   mands.UpdateHelpCommand
+
+update-help : Failed to update Help for the module(s) 'ConfigDefender, Defender, Microsoft.PowerShell.ODataUtils, 
+Microsoft.PowerShell.Operation.Validation, Whea, WindowsDeveloperLicense' with UI culture(s) {en-US} : Unable to 
+connect to Help content. The server on which Help content is stored might not be available. Verify that the server is 
+available, or wait until the server is back online, and then try the command again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UnableToConnect,Microsoft.PowerShell.Commands.UpdateHelpCommand
+update-help : Failed to update Help for the module(s) 'ConfigDefender, Defender,
+Microsoft.PowerShell.ODataUtils, Microsoft.PowerShell.Operation.Validation, Whea,
+WindowsDeveloperLicense' with UI culture(s) {en-US} : Unable to connect to Help content.
+The server on which Help content is stored might not be available. Verify that the server
+is available, or wait until the server is back online, and then try the command again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UnableToConnect,Microsoft.PowerShell.Commands.UpdateHelpComma
+   nd
+
+update-help : Failed to update Help for the module(s) 'WindowsUpdateProvider' with UI culture(s) {en-US} : Unable to 
+retrieve the HelpInfo XML file for UI culture en-US. Make sure the HelpInfoUri property in the module manifest is valid 
+or check your network connection and then try the command again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UnableToRetrieveHelpInfoXml,Microsoft.PowerShell.Commands.UpdateHelpCommand
+update-help : Failed to update Help for the module(s) 'WindowsUpdateProvider' with UI
+culture(s) {en-US} : Unable to retrieve the HelpInfo XML file for UI culture en-US. Make
+sure the HelpInfoUri property in the module manifest is valid or check your network
+connection and then try the command again.
+At line:1 char:1
++ update-help
++ ~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : UnableToRetrieveHelpInfoXml,Microsoft.PowerShell.Commands.Upd
+   ateHelpCommand
+
+PS C:\Users\xingy> help New-smbmapping -examples
+
+NAME
+    New-SmbMapping
+
+ALIASES
+    nsmbm
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying
+    only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use
+    Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help New-SmbMapping
+    -Online" or
+           go to http://go.microsoft.com/fwlink/?LinkID=241956.
+PS C:\Users\xingy> New-smbmapping -localpath w: -remotepath \\DC01\Share
+New-smbmapping : The network path was not found. 
+At line:1 char:1
++ New-smbmapping -localpath w: -remotepath \\DC01\Share
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (MSFT_SmbMapping:ROOT/Microsoft/...MSFT_SmbMapping) [New-SmbMapping], 
+CimException
+    + FullyQualifiedErrorId : Windows System Error 53,New-SmbMapping
+New-smbmapping : The network path was not found.
+At line:1 char:1
++ New-smbmapping -localpath w: -remotepath \\DC01\Share
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (MSFT_SmbMapping:ROOT/Microsoft/...MSFT_SmbMapp
+   ing) [New-SmbMapping], CimException
+    + FullyQualifiedErrorId : Windows System Error 53,New-SmbMapping
+
+PS C:\Users\xingy> # if the connection was successful, when we run the get-smbmapping command, it'll show the drive on your system.Then you can cd and view files in that directory.
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411104148
+**********************

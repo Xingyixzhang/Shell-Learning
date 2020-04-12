@@ -104,8 +104,16 @@ dir d:\
 3. PS scripts are good for performing routine maintenance tasks and automated tasks.
 4. For security reasons, PowerShell does not allow the execution of the scripts.
 - Basics of a parameterized script
+```txt
+1. Parameterizeing scripts: 
+Run all commands as one-liners -> Add Variables and Parameters -> Add Logic to run for multi instances -> Keep it Simple.
+2. Script Basics:
+Variables + Parameters + Logic + Member Enumeration
+```
 ```ps1
 Set-ExecutionPolicy -executionPolicy RemoteSigned
 ```
 - Using PowerShell ISE and VS Code
+1. PowerShell ISE (run as admin) : Open the files saved in transcripts folder with .ps1 extensions and run/modify the code.
+2. Visual Studio Code : Open File, Terminal, Run Active File.
 - Build a remote info gathering script

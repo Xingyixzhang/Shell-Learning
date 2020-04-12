@@ -104,5 +104,8 @@ dir d:\
 3. PS scripts are good for performing routine maintenance tasks and automated tasks.
 4. For security reasons, PowerShell does not allow the execution of the scripts.
 - Basics of a parameterized script
+```ps1
+Set-ExecutionPolicy -executionPolicy RemoteSigned
+```
 - Using PowerShell ISE and VS Code
 - Build a remote info gathering script

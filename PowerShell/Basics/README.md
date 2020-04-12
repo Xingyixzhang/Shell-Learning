@@ -117,3 +117,8 @@ Set-ExecutionPolicy -executionPolicy RemoteSigned
 1. PowerShell ISE (run as admin) : Open the files saved in transcripts folder with .ps1 extensions and run/modify the code.
 2. Visual Studio Code : Open File, Terminal, Run Active File.
 - Build a remote info gathering script
+1. Determine Script Tasks
+2. Build Commands
+3. Adding Commands to Script
+4. Create Variables and Parameters to make it reusable
+5. Run against remote systems

@@ -16,6 +16,7 @@
 
 # Disk FreeSpace on OS Drive
     $drive = Get-WmiObject -class Win32_logicaldisk | where-object DeviceID -eq 'C:'
+    # CAUTION: PS Core does not have get-wmiobject, so simply change it to get-ciminstance to run on Core.
     $Freespace = (($drive.FreeSpace)/1gb)
     $drive
     $Freespace

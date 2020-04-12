@@ -1,3 +1,15 @@
+# Parameters for ComputerName and UserName
+    param (
+        [Parameter(Mandatory=$true)][string]$ComputerName
+    )
+    
+# Variables
+    $Credential = Get-Credential
+    $CimSession = New-CimSession -ComputerName $ComputerName -Credential $Credential
+    $Analyst = $Credential.UserName
+    
+# Commands
+
 # OS Description
     $OS = (Get-CimInstance Win32_OperatingSystem -ComputerName XingyiPC2020).caption
     $OS

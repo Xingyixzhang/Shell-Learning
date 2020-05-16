@@ -49,6 +49,11 @@ PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
 >> select-object Name, MachineName, Status |
 >> Sort-object -property machineName | more
 ```
+**The following command can generate a new window "Get-Service Help"**
+```ps1
+PS C:\Users\xingy> get-help gsv -showwindow
+```
+
 3. Objects and the Pipeline: send output of a command into a secnd command.
 - Pipelining in PowerShell: Get sth, (Sort) sth, Do sth.
 ## Gathering Info with PowerShell

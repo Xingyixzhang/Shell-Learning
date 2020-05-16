@@ -53,7 +53,7 @@ PS C:\Users\xingy> gsv | where-object status -eq "stopped" |
 ```ps1
 PS C:\Users\xingy> get-help gsv -showwindow
 ```
-
+![pic of gsv help window](https://github.com/Xingyixzhang/Shell-Learning/blob/master/PowerShell/images/Get-Help%20gsv%20-showwindow.png)
 3. Objects and the Pipeline: send output of a command into a secnd command.
 - Pipelining in PowerShell: Get sth, (Sort) sth, Do sth.
 ## Gathering Info with PowerShell

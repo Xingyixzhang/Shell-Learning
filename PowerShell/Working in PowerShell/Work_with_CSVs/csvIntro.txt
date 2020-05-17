@@ -1,0 +1,4647 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200517134734
+Username: XINGYIPC2020\xingy
+RunAs User: XINGYIPC2020\xingy
+Configuration Name: 
+Machine: XINGYIPC2020 (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 17656
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\transcripts\csvIntro.txt
+PS C:\Users\xingy> get-help *csv*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+epcsv                             Alias                               Export-Csv
+ipcsv                             Alias                               Import-Csv
+ConvertFrom-Csv                   Cmdlet    Microsoft.PowerShell.U... Converts object properties in comma-separated ...
+ConvertTo-Csv                     Cmdlet    Microsoft.PowerShell.U... Converts objects into a series of comma-separa...
+Export-Csv                        Cmdlet    Microsoft.PowerShell.U... Converts objects into a series of comma-separa...
+Import-Csv                        Cmdlet    Microsoft.PowerShell.U... Creates table-like custom objects from the ite...
+Set-PcsvDeviceNetworkConfigura... Function  PcsvDevice                ...
+Start-PcsvDevice                  Function  PcsvDevice                ...
+Set-PcsvDeviceBootConfiguration   Function  PcsvDevice                ...
+Restart-PcsvDevice                Function  PcsvDevice                ...
+Set-PcsvDeviceUserPassword        Function  PcsvDevice                ...
+Get-PcsvDevice                    Function  PcsvDevice                ...
+Get-PcsvDeviceLog                 Function  PcsvDevice                ...
+Clear-PcsvDeviceLog               Function  PcsvDevice                ...
+Stop-PcsvDevice                   Function  PcsvDevice                ...
+
+
+PS C:\Users\xingy> get-service | export-csv -path C:\transcripts\service.csv
+PS C:\Users\xingy> import-csv -path C:\transcripts\service.csv
+
+
+Name                : AarSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Agent Activation Runtime_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AarSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AJRouter
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : AllJoyn Router Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AJRouter
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ALG
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Application Layer Gateway Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ALG
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AMD External Events Utility
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : AMD External Events Utility
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AMD External Events Utility
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : AppHostSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Application Host Helper Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AppHostSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : AppIDSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Application Identity
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AppIDSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Appinfo
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Application Information
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Appinfo
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AppReadiness
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : App Readiness
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AppReadiness
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AppXSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : AppX Deployment Service (AppXSVC)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AppXSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : aspnet_state
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : ASP.NET State Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : aspnet_state
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AudioEndpointBuilder
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Audio Endpoint Builder
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AudioEndpointBuilder
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : Audiosrv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Audio
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Audiosrv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : autotimesvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Cellular Time
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : autotimesvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : AxInstSV
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : ActiveX Installer (AxInstSV)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : AxInstSV
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BcastDVRUserService_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : GameDVR and Broadcast User Service_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BcastDVRUserService_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 240
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BDESVC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : BitLocker Drive Encryption Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BDESVC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BFE
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Base Filtering Engine
+DependentServices   :
+MachineName         : .
+ServiceName         : BFE
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : BITS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Background Intelligent Transfer Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BITS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BluetoothUserService_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Bluetooth User Support Service_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BluetoothUserService_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BrokerInfrastructure
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Background Tasks Infrastructure Service
+DependentServices   :
+MachineName         : .
+ServiceName         : BrokerInfrastructure
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : BTAGService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Bluetooth Audio Gateway Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BTAGService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : BthAvctpSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : AVCTP service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : BthAvctpSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : bthserv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Bluetooth Support Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : bthserv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : camsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Capability Access Manager Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : camsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : CaptureService_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : CaptureService_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CaptureService_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : cbdhsvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Clipboard User Service_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : cbdhsvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : CDPSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Connected Devices Platform Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CDPSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : CDPUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Connected Devices Platform User Service_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CDPUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : CertPropSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Certificate Propagation
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CertPropSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ClickToRunSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Microsoft Office Click-to-Run Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ClickToRunSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : ClipSVC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Client License Service (ClipSVC)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ClipSVC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : COMSysApp
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : COM+ System Application
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : COMSysApp
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ConsentUxUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : ConsentUX_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ConsentUxUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : CoreMessagingRegistrar
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : CoreMessaging
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CoreMessagingRegistrar
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : CredentialEnrollmentManagerUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : CredentialEnrollmentManagerUserSvc_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CredentialEnrollmentManagerUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 208
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : CryptSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Cryptographic Services
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : CryptSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : DcomLaunch
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : DCOM Server Process Launcher
+DependentServices   :
+MachineName         : .
+ServiceName         : DcomLaunch
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : defragsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Optimize drives
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : defragsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DeviceAssociationBrokerSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : DeviceAssociationBroker_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DeviceAssociationBrokerSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DeviceAssociationService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Device Association Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DeviceAssociationService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DeviceInstall
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Device Install Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DeviceInstall
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DevicePickerUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : DevicePicker_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DevicePickerUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DevicesFlowUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : DevicesFlow_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DevicesFlowUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DevQueryBroker
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : DevQuery Background Discovery Broker
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DevQueryBroker
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Dhcp
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : DHCP Client
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Dhcp
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : diagnosticshub.standardcollector.service
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Microsoft (R) Diagnostics Hub Standard Collector Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : diagnosticshub.standardcollector.service
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : diagsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Diagnostic Execution Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : diagsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DiagTrack
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Connected User Experiences and Telemetry
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DiagTrack
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : DispBrokerDesktopSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Display Policy Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DispBrokerDesktopSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : DisplayEnhancementService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Display Enhancement Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DisplayEnhancementService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DmEnrollmentSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Device Management Enrollment Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DmEnrollmentSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : dmwappushservice
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Device Management Wireless Application Protocol (WAP) Push message Routing Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : dmwappushservice
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Dnscache
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : DNS Client
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Dnscache
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : DoSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Delivery Optimization
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DoSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : dot3svc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Wired AutoConfig
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : dot3svc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DPS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Diagnostic Policy Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DPS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : DsmSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Device Setup Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DsmSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DsSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Data Sharing Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DsSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : DusmSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Data Usage
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : DusmSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : Eaphost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Extensible Authentication Protocol
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Eaphost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : EFS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Encrypting File System (EFS)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : EFS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : embeddedmode
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Embedded Mode
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : embeddedmode
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : EntAppSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Enterprise App Management Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : EntAppSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Epson PMAService A
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Epson PMAService A
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Epson PMAService A
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : EpsonScanSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Epson Scanner Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : EpsonScanSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : ETDService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : ELAN Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ETDService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : EventLog
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Event Log
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : EventLog
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : EventSystem
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : COM+ Event System
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : EventSystem
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : Fax
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Fax
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Fax
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : fdPHost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Function Discovery Provider Host
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : fdPHost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : FDResPub
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Function Discovery Resource Publication
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : FDResPub
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : fhsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : File History Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : fhsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : FontCache
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Font Cache Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : FontCache
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : FontCache3.0.0.0
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Presentation Foundation Font Cache 3.0.0.0
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : FontCache3.0.0.0
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : FrameServer
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Camera Frame Server
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : FrameServer
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : GoogleChromeElevationService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Google Chrome Elevation Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : GoogleChromeElevationService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : gpsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Group Policy Client
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : gpsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : GraphicsPerfSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : GraphicsPerfSvc
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : GraphicsPerfSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : gupdate
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Google Update Service (gupdate)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : gupdate
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : gupdatem
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Google Update Service (gupdatem)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : gupdatem
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : hidserv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Human Interface Device Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : hidserv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : HP Comm Recover
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HP Comm Recovery
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HP Comm Recover
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : HPAppHelperCap
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HP App Helper HSA Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HPAppHelperCap
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : HPNetworkCap
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HP Network HSA Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HPNetworkCap
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : HPSysInfoCap
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HP System Info HSA Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HPSysInfoCap
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : HpTouchpointAnalyticsService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HP Analytics service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HpTouchpointAnalyticsService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : HvHost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : HV Host Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : HvHost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : icssvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Mobile Hotspot Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : icssvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : IKEEXT
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : IKE and AuthIP IPsec Keying Modules
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : IKEEXT
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : InstallService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Microsoft Store Install Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : InstallService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : iphlpsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : IP Helper
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : iphlpsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : IpxlatCfgSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : IP Translation Configuration Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : IpxlatCfgSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : KeyIso
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : CNG Key Isolation
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : KeyIso
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : KtmRm
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : KtmRm for Distributed Transaction Coordinator
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : KtmRm
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : LanmanServer
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Server
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : LanmanServer
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : LanmanWorkstation
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : True
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Workstation
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : LanmanWorkstation
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : lfsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Geolocation Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : lfsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : LicenseManager
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows License Manager Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : LicenseManager
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : lltdsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Link-Layer Topology Discovery Mapper
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : lltdsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : lmhosts
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : TCP/IP NetBIOS Helper
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : lmhosts
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : LSM
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Local Session Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : LSM
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : LxpSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Language Experience Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : LxpSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : MapsBroker
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Downloaded Maps Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : MapsBroker
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : MessagingService_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : MessagingService_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : MessagingService_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : MixedRealityOpenXRSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Mixed Reality OpenXR Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : MixedRealityOpenXRSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : mpssvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Defender Firewall
+DependentServices   :
+MachineName         : .
+ServiceName         : mpssvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : MSDTC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Distributed Transaction Coordinator
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : MSDTC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : MSiSCSI
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Microsoft iSCSI Initiator Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : MSiSCSI
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : msiserver
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Installer
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : msiserver
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NaturalAuthentication
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Natural Authentication
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NaturalAuthentication
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NcaSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Network Connectivity Assistant
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NcaSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NcbService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Network Connection Broker
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NcbService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NcdAutoSetup
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Network Connected Devices Auto-Setup
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NcdAutoSetup
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Netlogon
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Netlogon
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Netlogon
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Netman
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Network Connections
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Netman
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : netprofm
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Network List Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : netprofm
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NetSetupSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Network Setup Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NetSetupSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NetTcpPortSharing
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Net.Tcp Port Sharing Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NetTcpPortSharing
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : NgcCtnrSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Microsoft Passport Container
+DependentServices   :
+MachineName         : .
+ServiceName         : NgcCtnrSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NgcSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Microsoft Passport
+DependentServices   :
+MachineName         : .
+ServiceName         : NgcSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : NlaSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Network Location Awareness
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : NlaSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : nsi
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Network Store Interface Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : nsi
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : OneSyncSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Sync Host_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : OneSyncSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 224
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : ose64
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Office 64 Source Engine
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ose64
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : p2pimsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Peer Networking Identity Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : p2pimsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : p2psvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Peer Networking Grouping
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : p2psvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PcaSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Program Compatibility Assistant Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PcaSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : perceptionsimulation
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Perception Simulation Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : perceptionsimulation
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PerfHost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Performance Counter DLL Host
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PerfHost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PhoneSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Phone Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PhoneSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PimIndexMaintenanceSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Contact Data_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PimIndexMaintenanceSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : pla
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Performance Logs & Alerts
+DependentServices   :
+MachineName         : .
+ServiceName         : pla
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PlugPlay
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Plug and Play
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PlugPlay
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PNRPAutoReg
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : PNRP Machine Name Publication Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PNRPAutoReg
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PNRPsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Peer Name Resolution Protocol
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PNRPsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PolicyAgent
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : IPsec Policy Agent
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PolicyAgent
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Power
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Power
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Power
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : PrintNotify
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Printer Extensions and Notifications
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PrintNotify
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess, InteractiveProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : PrintWorkflowUserSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : PrintWorkflow_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PrintWorkflowUserSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ProfSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : User Profile Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ProfSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : PushToInstall
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows PushToInstall Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : PushToInstall
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : QWAVE
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Quality Windows Audio Video Experience
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : QWAVE
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : RasAuto
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Remote Access Auto Connection Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RasAuto
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : RasMan
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Remote Access Connection Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RasMan
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : RemoteAccess
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Routing and Remote Access
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RemoteAccess
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : RemoteRegistry
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Remote Registry
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RemoteRegistry
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : RetailDemo
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Retail Demo Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RetailDemo
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : RmSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Radio Management Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RmSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : RpcEptMapper
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : RPC Endpoint Mapper
+DependentServices   :
+MachineName         : .
+ServiceName         : RpcEptMapper
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : RpcLocator
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Remote Procedure Call (RPC) Locator
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RpcLocator
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : RpcSs
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Remote Procedure Call (RPC)
+DependentServices   :
+MachineName         : .
+ServiceName         : RpcSs
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : RtkAudioUniversalService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Realtek Audio Universal Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RtkAudioUniversalService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : RtkBtManServ
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Realtek Bluetooth Device Manager Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : RtkBtManServ
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SamSs
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Security Accounts Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SamSs
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SCardSvr
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Smart Card
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SCardSvr
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ScDeviceEnum
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Smart Card Device Enumeration Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ScDeviceEnum
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Schedule
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Task Scheduler
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Schedule
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SCPolicySvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Smart Card Removal Policy
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SCPolicySvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SDRSVC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Backup
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SDRSVC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : seclogon
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Secondary Logon
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : seclogon
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SECOMNService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Sound Research SECOMN Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SECOMNService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SecurityHealthService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Security Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SecurityHealthService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SEMgrSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Payments and NFC/SE Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SEMgrSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SENS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : System Event Notification Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SENS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SensorDataService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Sensor Data Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SensorDataService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SensorService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Sensor Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SensorService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SensrSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Sensor Monitoring Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SensrSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SessionEnv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Remote Desktop Configuration
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SessionEnv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SgrmBroker
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : False
+DisplayName         : System Guard Runtime Monitor Broker
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SgrmBroker
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SharedAccess
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Internet Connection Sharing (ICS)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SharedAccess
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SharedRealitySvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Spatial Data Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SharedRealitySvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ShellHWDetection
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Shell Hardware Detection
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ShellHWDetection
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : shpamsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Shared PC Account Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : shpamsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : smphost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Microsoft Storage Spaces SMP
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : smphost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SmsRouter
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Microsoft Windows SMS Router Service.
+DependentServices   :
+MachineName         : .
+ServiceName         : SmsRouter
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SNMPTRAP
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : SNMP Trap
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SNMPTRAP
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : spectrum
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Perception Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : spectrum
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Spooler
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Print Spooler
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Spooler
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, InteractiveProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : sppsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Software Protection
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : sppsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SQLWriter
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : SQL Server VSS Writer
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SQLWriter
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SSDPSRV
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : SSDP Discovery
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SSDPSRV
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : ssh-agent
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : OpenSSH Authentication Agent
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : ssh-agent
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : SstpSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Secure Socket Tunneling Protocol Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SstpSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : StateRepository
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : State Repository Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : StateRepository
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : stisvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Image Acquisition (WIA)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : stisvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : StorSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Storage Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : StorSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : svsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Spot Verifier
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : svsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : swprv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Microsoft Software Shadow Copy Provider
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : swprv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : SysMain
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : SysMain
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : SysMain
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : SystemEventsBroker
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : System Events Broker
+DependentServices   :
+MachineName         : .
+ServiceName         : SystemEventsBroker
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : TabletInputService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Touch Keyboard and Handwriting Panel Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TabletInputService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : TapiSrv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Telephony
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TapiSrv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : TermService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Remote Desktop Services
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TermService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Themes
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Themes
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Themes
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : TieringEngineService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Storage Tiers Management
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TieringEngineService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : TimeBrokerSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Time Broker
+DependentServices   :
+MachineName         : .
+ServiceName         : TimeBrokerSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : TokenBroker
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Web Account Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TokenBroker
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : TrkWks
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Distributed Link Tracking Client
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TrkWks
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : TroubleshootingSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Recommended Troubleshooting Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TroubleshootingSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : TrustedInstaller
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Modules Installer
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : TrustedInstaller
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : tzautoupdate
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Auto Time Zone Updater
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : tzautoupdate
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Disabled
+Site                :
+Container           :
+
+Name                : UmRdpService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Remote Desktop Services UserMode Port Redirector
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : UmRdpService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : UnistoreSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : User Data Storage_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : UnistoreSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : upnphost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : UPnP Device Host
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : upnphost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : UserDataSvc_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : User Data Access_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : UserDataSvc_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 224
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : UserManager
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : User Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : UserManager
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : UsoSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Update Orchestrator Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : UsoSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : VacSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Volumetric Audio Compositor Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : VacSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : VaultSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Credential Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : VaultSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : VBoxSDS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : VirtualBox system service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : VBoxSDS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vds
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Virtual Disk
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vds
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicguestinterface
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Guest Service Interface
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicguestinterface
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicheartbeat
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Heartbeat Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicheartbeat
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmickvpexchange
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Data Exchange Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmickvpexchange
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicrdv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Remote Desktop Virtualization Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicrdv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicshutdown
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Guest Shutdown Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicshutdown
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmictimesync
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Time Synchronization Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmictimesync
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicvmsession
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V PowerShell Direct Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicvmsession
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : vmicvss
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Hyper-V Volume Shadow Copy Requestor
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : vmicvss
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : VSS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Volume Shadow Copy
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : VSS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : VSStandardCollectorService150
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Visual Studio Standard Collector Service 150
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : VSStandardCollectorService150
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : W32Time
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Time
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : W32Time
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : w3logsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : W3C Logging Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : w3logsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : W3SVC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : World Wide Web Publishing Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : W3SVC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : WaaSMedicSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Update Medic Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WaaSMedicSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WalletService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : WalletService
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WalletService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WarpJITSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : WarpJITSvc
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WarpJITSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WAS
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Process Activation Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WAS
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : wbengine
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Block Level Backup Engine Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wbengine
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WbioSrvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Biometric Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WbioSrvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Wcmsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Connection Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Wcmsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : wcncsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Connect Now - Config Registrar
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wcncsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WdiServiceHost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Diagnostic Service Host
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WdiServiceHost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WdiSystemHost
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Diagnostic System Host
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WdiSystemHost
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WdNisSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Defender Antivirus Network Inspection Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WdNisSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WebClient
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : WebClient
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WebClient
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Wecsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Event Collector
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Wecsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WEPHOSTSVC
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Encryption Provider Host Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WEPHOSTSVC
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : wercplsupport
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Problem Reports and Solutions Control Panel Support
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wercplsupport
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WerSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Error Reporting Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WerSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WFDSConMgrSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Wi-Fi Direct Services Connection Manager Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WFDSConMgrSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WiaRpc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Still Image Acquisition Events
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WiaRpc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WinDefend
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Defender Antivirus Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WinDefend
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : WinHttpAutoProxySvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : False
+DisplayName         : WinHTTP Web Proxy Auto-Discovery Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WinHttpAutoProxySvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : Winmgmt
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Management Instrumentation
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : Winmgmt
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : WinRM
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Remote Management (WS-Management)
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WinRM
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : wisvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Insider Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wisvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WlanSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : WLAN AutoConfig
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WlanSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : wlidsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Microsoft Account Sign-in Assistant
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wlidsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : wlpasvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Local Profile Assistant Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wlpasvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WManSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Management Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WManSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : wmiApSrv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : WMI Performance Adapter
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wmiApSrv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WMPNetworkSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Media Player Network Sharing Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WMPNetworkSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : workfolderssvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Work Folders
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : workfolderssvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WpcMonSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Parental Controls
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WpcMonSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WPDBusEnum
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Portable Device Enumerator Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WPDBusEnum
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WpnService
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Push Notifications System Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WpnService
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : WpnUserService_e40a4
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : True
+DisplayName         : Windows Push Notifications User Service_e40a4
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WpnUserService_e40a4
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : wscsvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Security Center
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wscsvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : WSearch
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Windows Search
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WSearch
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess
+StartType           : Automatic
+Site                :
+Container           :
+
+Name                : wuauserv
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Windows Update
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : wuauserv
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : WwanSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : WWAN AutoConfig
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : WwanSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : XblAuthManager
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Xbox Live Auth Manager
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : XblAuthManager
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : XblGameSave
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Xbox Live Game Save
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : XblGameSave
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : XboxGipSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Xbox Accessory Management Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : XboxGipSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : XboxNetApiSvc
+RequiredServices    : System.ServiceProcess.ServiceController[]
+CanPauseAndContinue : False
+CanShutdown         : False
+CanStop             : False
+DisplayName         : Xbox Live Networking Service
+DependentServices   : System.ServiceProcess.ServiceController[]
+MachineName         : .
+ServiceName         : XboxNetApiSvc
+ServicesDependedOn  : System.ServiceProcess.ServiceController[]
+ServiceHandle       :
+Status              : Stopped
+ServiceType         : Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+
+
+PS C:\Users\xingy> get-help export-cs
+
+NAME
+    Export-Csv
+
+SYNOPSIS
+    Converts objects into a series of comma-separated (CSV) strings and saves the strings in a CSV file.
+
+
+SYNTAX
+    Export-Csv [[-Path] <String>] [[-Delimiter] <Char>] [-Append] [-Confirm] [-Encoding {Unicode | UTF7 | UTF8 | ASCII
+    | UTF32 | BigEndianUnicode | Default | OEM}] [-Force] -InputObject <PSObject> [-LiteralPath <String>] [-NoClobber]
+    [-NoTypeInformation] [-WhatIf] [<CommonParameters>]
+
+    Export-Csv [[-Path] <String>] [-Append] [-Confirm] [-Encoding {Unicode | UTF7 | UTF8 | ASCII | UTF32 |
+    BigEndianUnicode | Default | OEM}] [-Force] -InputObject <PSObject> [-LiteralPath <String>] [-NoClobber]
+    [-NoTypeInformation] [-UseCulture] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Export-CSV cmdlet creates a CSV file of the objects that you submit. Each object is represented as a line or
+    row of the CSV. The row consists of a comma-separated list of the values of object properties. You can use this
+    cmdlet to create spreadsheets and share data with programs that take CSV files as input.
+
+    Do not format objects before sending them to the Export-CSV cmdlet. If you do, the format properties are
+    represented in the CSV file, instead of the properties of the original objects. To export only selected properties
+    of an object, use the Select-Object cmdlet.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821769
+    ConvertFrom-Csv
+    ConvertTo-Csv
+    Format-Table
+    Import-Csv
+    Select-Object
+
+REMARKS
+    To see the examples, type: "get-help Export-Csv -examples".
+    For more information, type: "get-help Export-Csv -detailed".
+    For technical information, type: "get-help Export-Csv -full".
+    For online help, type: "get-help Export-Csv -online"
+
+
+PS C:\Users\xingy> # in order to make sure any third party can format the file correctly:
+PS C:\Users\xingy> get-service | export-csv -path C:\transcripts\service.csv -NoTypeInformation
+PS C:\Users\xingy> # export- meaning we are done with the object and there won't be a pipeline after.
+PS C:\Users\xingy> gsv | convertto-csv -NoTypeInformation | out-file C:\transcripts\testService.txt
+PS C:\Users\xingy> # Convert file will not record, use the pipeline after to have the info outfile somewhere.
+PS C:\Users\xingy> # then you may do import-csv C:\transcripts\testService.txt
+PS C:\Users\xingy> dir serv*
+
+
+    Directory: C:\Users\xingy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         4/9/2020   8:18 PM           7104 services.csv
+-a----         4/9/2020   8:19 PM           3528 services2.csv
+
+
+PS C:\Users\xingy> dir *serv*
+
+
+    Directory: C:\Users\xingy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         4/9/2020   8:18 PM           7104 services.csv
+-a----         4/9/2020   8:19 PM           3528 services2.csv
+
+
+PS C:\Users\xingy> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200517140353
+**********************

@@ -1,0 +1,270 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200517132929
+Username: XINGYIPC2020\xingy
+RunAs User: XINGYIPC2020\xingy
+Configuration Name: 
+Machine: XINGYIPC2020 (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8196
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\transcripts\file_printer.txt
+PS C:\Users\xingy> get-service *out-*
+PS C:\Users\xingy> get-help *out-*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Out-Default                       Cmdlet    Microsoft.PowerShell.Core Sends the output to the default formatter and ...
+Out-Host                          Cmdlet    Microsoft.PowerShell.Core Sends output to the command line.
+Out-Null                          Cmdlet    Microsoft.PowerShell.Core Deletes output instead of sending it down the ...
+Out-File                          Cmdlet    Microsoft.PowerShell.U... Sends output to a file.
+Out-GridView                      Cmdlet    Microsoft.PowerShell.U... Sends output to an interactive table in a sepa...
+Out-Printer                       Cmdlet    Microsoft.PowerShell.U... Sends output to a printer.
+Out-String                        Cmdlet    Microsoft.PowerShell.U... Sends objects to the host as a series of strings.
+
+
+PS C:\Users\xingy> get-service | out-file -FilePath C:\transcripts\file_printer.txt
+>> TerminatingError(Out-File): "The process cannot access the file 'C:\transcripts\file_printer.txt' because it is being used by another process."
+out-file : The process cannot access the file 'C:\transcripts\file_printer.txt' because it is being used by another 
+process.
+At line:1 char:15
++ get-service | out-file -FilePath C:\transcripts\file_printer.txt
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+out-file : The process cannot access the file 'C:\transcripts\file_printer.txt' because it is being used by another
+process.
+At line:1 char:15
++ get-service | out-file -FilePath C:\transcripts\file_printer.txt
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\Users\xingy> get-service | out-file -FilePath C:\transcripts\file.txt
+PS C:\Users\xingy> get-childitem
+
+
+    Directory: C:\Users\xingy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         5/7/2020  10:15 PM                .android
+d-----        3/28/2020  11:42 AM                .azure
+d-----        3/17/2020   5:29 PM                .config
+d-----         5/7/2020   2:45 PM                .dotnet
+d-----        3/16/2020   1:09 PM                .nuget
+d-----        4/11/2020   8:01 PM                .omnisharp
+d-----        3/17/2020   3:50 PM                .templateengine
+d-----         5/7/2020   4:15 PM                .VirtualBox
+d-----         4/8/2020   7:38 PM                .vscode
+d-r---        5/15/2020   9:13 PM                3D Objects
+d-r---        5/15/2020   9:13 PM                Contacts
+d-----         2/2/2020   4:15 PM                Documents
+d-r---        5/15/2020   9:13 PM                Downloads
+d-r---        5/15/2020   9:13 PM                Favorites
+d-r---        5/15/2020   9:13 PM                Links
+d-r---        5/15/2020   9:13 PM                Music
+dar--l        5/15/2020   9:14 PM                OneDrive
+d-----        4/16/2020   8:51 AM                Postman
+d-r---        5/15/2020   9:13 PM                Saved Games
+d-r---        5/15/2020   9:13 PM                Searches
+d-----         2/1/2020   5:44 PM                source
+d-----        5/17/2020   1:28 PM                transcripts
+d-r---        5/15/2020   9:13 PM                Videos
+d-----         5/6/2020   7:29 PM                VirtualBox VMs
+-a----         5/6/2020  11:45 AM            265 .bash_history
+-a----         5/7/2020   5:09 PM             16 .emulator_console_auth_token
+-a----         5/6/2020   9:16 PM             53 .git-for-windows-updater
+-a----         5/5/2020   9:19 PM             64 .gitconfig
+-a----         4/9/2020   8:18 PM           7104 services.csv
+-a----         4/9/2020   8:19 PM           3528 services2.csv
+
+
+PS C:\Users\xingy> get-childitem -path c:\ -filter *.txt*
+PS C:\Users\xingy> get-childitem -path c:\transcripts\ -filter *.txt*
+
+
+    Directory: C:\transcripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        5/17/2020   1:31 PM          36462 file.txt
+-a----        5/17/2020   1:30 PM           1699 file_printer.txt
+-a----        4/15/2020   5:45 PM            945 PSAutoLabSetUp.txt
+
+
+PS C:\Users\xingy> get-help *content*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Add-Content                       Cmdlet    Microsoft.PowerShell.M... Adds content to the specified items, such as a...
+Clear-Content                     Cmdlet    Microsoft.PowerShell.M... Deletes the contents of an item, but does not ...
+Get-Content                       Cmdlet    Microsoft.PowerShell.M... Gets the content of the item at the specified ...
+Set-Content                       Cmdlet    Microsoft.PowerShell.M... Writes or replaces the content in an item with...
+Get-WindowsImageContent           Cmdlet    Dism                      Get-WindowsImageContent...
+
+
+PS C:\Users\xingy> get-content -path C:\transcripts\PSAutoLabSetUp.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20200415174138
+Username: XINGYIPC2020\xingy
+RunAs User: XINGYIPC2020\xingy
+Configuration Name:
+Machine: XINGYIPC2020 (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14656
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is \transcripts\PSAutoLabSetUp.txt
+PS C:\> get-ciminstance -className Win32_OperatingSystem | Select-object Caption,@{Name="MemoryGB";Expression={$_.TotalVisibleMemorySize/1mb -as [int]}}
+
+Caption                   MemoryGB
+-------                   --------
+Microsoft Windows 10 Home       14
+
+
+PS C:\Users\xingy> # Content can also be viewed by using notepad C:\...
+PS C:\Users\xingy> get-service | out-printer
+PS C:\Users\xingy> get-help *eventlog*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Clear-EventLog                    Cmdlet    Microsoft.PowerShell.M... Clears all entries from specified event logs o...
+Get-EventLog                      Cmdlet    Microsoft.PowerShell.M... Gets the events in an event log, or a list of ...
+Limit-EventLog                    Cmdlet    Microsoft.PowerShell.M... Sets the event log properties that limit the s...
+New-EventLog                      Cmdlet    Microsoft.PowerShell.M... Creates a new event log and a new event source...
+Remove-EventLog                   Cmdlet    Microsoft.PowerShell.M... Deletes an event log or unregisters an event s...
+Show-EventLog                     Cmdlet    Microsoft.PowerShell.M... Displays the event logs of the local or a remo...
+Write-EventLog                    Cmdlet    Microsoft.PowerShell.M... Writes an event to an event log.
+about_Eventlogs                   HelpFile                            Windows PowerShell creates a Windows event log...
+
+
+PS C:\Users\xingy> get-help get-eventlog
+
+NAME
+    Get-EventLog
+
+SYNOPSIS
+    Gets the events in an event log, or a list of the event logs, on the local or remote computers.
+
+
+SYNTAX
+    Get-EventLog [-LogName] <String> [[-InstanceId] <Int64[]>] [-After <DateTime>] [-AsBaseObject] [-Before
+    <DateTime>] [-ComputerName <String[]>] [-EntryType {Error | Information | FailureAudit | SuccessAudit | Warning}]
+    [-Index <Int32[]>] [-Message <String>] [-Newest <Int32>] [-Source <String[]>] [-UserName <String[]>]
+    [<CommonParameters>]
+
+    Get-EventLog [-AsString] [-ComputerName <String[]>] [-List] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-EventLog cmdlet gets events and event logs on the local and remote computers.
+
+    You can use the parameters of this cmdlet to search for events by using their property values. This cmdlet gets
+    only the events that match all of the specified property values.
+
+    The cmdlets that contain the EventLog noun work only on classic event logs. To get events from logs that use the
+    Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821585
+    Clear-EventLog
+    Limit-EventLog
+    New-EventLog
+    Remove-EventLog
+    Show-EventLog
+    Write-EventLog
+
+REMARKS
+    To see the examples, type: "get-help Get-EventLog -examples".
+    For more information, type: "get-help Get-EventLog -detailed".
+    For technical information, type: "get-help Get-EventLog -full".
+    For online help, type: "get-help Get-EventLog -online"
+
+
+PS C:\Users\xingy> get-eventlog -list
+
+  Max(K) Retain OverflowAction        Entries Log
+  ------ ------ --------------        ------- ---
+  20,480      0 OverwriteAsNeeded      15,577 Application
+  20,480      0 OverwriteAsNeeded           0 HardwareEvents
+     512      7 OverwriteOlder            415 HP Analytics
+     512      7 OverwriteOlder              0 Internet Explorer
+  20,480      0 OverwriteAsNeeded           0 Key Management Service
+     128      0 OverwriteAsNeeded          44 OAlerts
+                                              Security
+  20,480      0 OverwriteAsNeeded      18,198 System
+     512      7 OverwriteOlder              0 Windows Azure
+  15,360      0 OverwriteAsNeeded       2,405 Windows PowerShell
+
+
+PS C:\Users\xingy> get-eventlog
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\xingy> get-eventlog -logname security -entrytype error
+>> TerminatingError(Get-EventLog): "Requested registry access is not allowed."
+get-eventlog : Requested registry access is not allowed.
+At line:1 char:1
++ get-eventlog -logname security -entrytype error
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], SecurityException
+    + FullyQualifiedErrorId : System.Security.SecurityException,Microsoft.PowerShell.Commands.GetEventLogCommand
+get-eventlog : Requested registry access is not allowed.
+At line:1 char:1
++ get-eventlog -logname security -entrytype error
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], SecurityException
+    + FullyQualifiedErrorId : System.Security.SecurityException,Microsoft.PowerShell.Commands.GetEventLogCommand
+
+PS C:\Users\xingy> get-eventlog -logname security -entrytype error -newest 5
+>> TerminatingError(Get-EventLog): "Requested registry access is not allowed."
+get-eventlog : Requested registry access is not allowed.
+At line:1 char:1
++ get-eventlog -logname security -entrytype error -newest 5
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], SecurityException
+    + FullyQualifiedErrorId : System.Security.SecurityException,Microsoft.PowerShell.Commands.GetEventLogCommand
+get-eventlog : Requested registry access is not allowed.
+At line:1 char:1
++ get-eventlog -logname security -entrytype error -newest 5
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], SecurityException
+    + FullyQualifiedErrorId : System.Security.SecurityException,Microsoft.PowerShell.Commands.GetEventLogCommand
+
+PS C:\Users\xingy> get-eventlog -logname system -entrytype error -newest 5
+
+   Index Time          EntryType   Source                 InstanceID Message
+   ----- ----          ---------   ------                 ---------- -------
+   17831 May 15 21:10  Error       DCOM                        10010 The description for Event ID '10010' in Source ...
+   17830 May 15 21:10  Error       DCOM                        10010 The description for Event ID '10010' in Source ...
+   17829 May 15 21:10  Error       DCOM                        10010 The description for Event ID '10010' in Source ...
+   17828 May 15 21:10  Error       DCOM                        10010 The description for Event ID '10010' in Source ...
+   17613 May 14 22:12  Error       Service Control M...   3221232483 A timeout (30000 milliseconds) was reached whil...
+
+
+PS C:\Users\xingy> get-eventlog -logname system -entrytype error -newest 5 | out-file C:\transcripts\SystemErrors.txt
+PS C:\Users\xingy> notepad C:\transcripts\SystemErrors.txt
+PS C:\Users\xingy> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200517134245
+**********************

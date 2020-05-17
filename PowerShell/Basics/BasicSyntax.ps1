@@ -39,6 +39,19 @@ PS C:\Users\xingy> get-verb -Group Security | format-list
 # (MORE LINES)
 
 # Check Aliases of PS commands:
+PS C:\Users\xingy> get-alias -definition get-service
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           gsv -> Get-Service
+
+
+PS C:\Users\xingy> get-alias -name gsv
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           gsv -> Get-Service
+
 PS C:\Users\xingy> get-alias | more
 
 # CommandType     Name                                               Version    Source

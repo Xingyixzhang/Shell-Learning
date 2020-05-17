@@ -1,0 +1,134 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200411165857
+Username: LAPTOP-DITBP9DB\xingy
+RunAs User: LAPTOP-DITBP9DB\xingy
+Configuration Name: 
+Machine: LAPTOP-DITBP9DB (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 15612
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\transcripts\Run_Scripts_using_Set_ExecutionPolicy.txt
+PS C:\WINDOWS\system32> cd c:\Users\xingy\transcripts
+PS C:\Users\xingy\transcripts> .\test_script.ps1
+.\test_script.ps1 : The term '.\test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ .\test_script.ps1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.\test_script.ps1 : The term '.\test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ .\test_script.ps1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\xingy\transcripts> get-executionpolicy
+Restricted
+PS C:\Users\xingy\transcripts> help set-executionPolicy -parameter executionPolicy
+
+-ExecutionPolicy <ExecutionPolicy>
+
+    Required?                    true
+    Position?                    0
+    Accept pipeline input?       true (ByValue)
+    Parameter set name           (All)
+    Aliases                      None
+    Dynamic?                     false
+PS C:\Users\xingy\transcripts> set-executionPolicy -executionPolicy remoteSigned
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+PS C:\Users\xingy\transcripts> .\test_script.ps1
+.\test_script.ps1 : The term '.\test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ .\test_script.ps1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.\test_script.ps1 : The term '.\test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ .\test_script.ps1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\xingy\transcripts> test_script.ps1
+test_script.ps1 : The term 'test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ test_script.ps1
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+test_script.ps1 : The term 'test_script.ps1' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ test_script.ps1
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\xingy\transcripts> cd c:\Users\xingy
+PS C:\Users\xingy> .transcripts\test_script.ps1
+.transcripts\test_script.ps1 : The module '.transcripts' could not be loaded. For more information, run 'Import-Module 
+.transcripts'.
+At line:1 char:1
++ .transcripts\test_script.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.transcripts\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+.transcripts\test_script.ps1 : The module '.transcripts' could not be loaded. For more information, run 'Import-Module
+.transcripts'.
+At line:1 char:1
++ .transcripts\test_script.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.transcripts\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+
+PS C:\Users\xingy> set-executionPolicy -executionPolicy remoteSigned
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+PS C:\Users\xingy> .transcripts\test_script.ps1
+.transcripts\test_script.ps1 : The module '.transcripts' could not be loaded. For more information, run 'Import-Module 
+.transcripts'.
+At line:1 char:1
++ .transcripts\test_script.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.transcripts\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+.transcripts\test_script.ps1 : The module '.transcripts' could not be loaded. For more information, run 'Import-Module
+.transcripts'.
+At line:1 char:1
++ .transcripts\test_script.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.transcripts\test_script.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+
+PS C:\Users\xingy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200411170918
+**********************

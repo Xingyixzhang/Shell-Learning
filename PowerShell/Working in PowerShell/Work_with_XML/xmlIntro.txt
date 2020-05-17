@@ -1,0 +1,307 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200517161439
+Username: XINGYIPC2020\xingy
+RunAs User: XINGYIPC2020\xingy
+Configuration Name: 
+Machine: XINGYIPC2020 (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 16820
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\transcripts\xmlIntro.txt
+PS C:\Users\xingy> get-help *xml*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+ConvertTo-Xml                     Cmdlet    Microsoft.PowerShell.U... Creates an XML-based representation of an object.
+Export-Clixml                     Cmdlet    Microsoft.PowerShell.U... Creates an XML-based representation of an obje...
+Import-Clixml                     Cmdlet    Microsoft.PowerShell.U... Imports a CLIXML file and creates correspondin...
+Select-Xml                        Cmdlet    Microsoft.PowerShell.U... Finds text in an XML string or document.
+about_Format.ps1xml               HelpFile                            The Format.ps1xml files in Windows PowerShell ...
+about_Types.ps1xml                HelpFile                            Explains how to use Types.ps1xml files to exte...
+
+
+PS C:\Users\xingy> get-process | Export-Clixml -path C:\process.xml
+>> TerminatingError(Export-Clixml): "Access to the path 'C:\process.xml' is denied."
+Export-Clixml : Access to the path 'C:\process.xml' is denied.
+At line:1 char:15
++ get-process | Export-Clixml -path C:\process.xml
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Export-Clixml], UnauthorizedAccessException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.ExportClixmlCommand
+Export-Clixml : Access to the path 'C:\process.xml' is denied.
+At line:1 char:15
++ get-process | Export-Clixml -path C:\process.xml
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Export-Clixml], UnauthorizedAccessException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.ExportClixmlCommand
+
+PS C:\Users\xingy> get-process | Export-Clixml -path C:\transcripts\process.xml
+PS C:\Users\xingy> notepad C:\transcripts\process.xml
+PS C:\Users\xingy> Import-CliXML C:\transcripts\process.xml
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    402      15     4248        160       2.69  11360   1 AMDRSServ
+    265      17     4572       8664              2092   0 AppHelperCap
+    497      29    22080      25604       4.11  12172   1 ApplicationFrameHost
+    170       8     1500       3684              3596   0 atiesrxx
+    196      10     6560      12388       0.31   9892   0 audiodg
+    132       8     1672       4592       0.03  12404   1 browser_broker
+    377      34   141412     132512     359.78   1592   1 chrome
+    236      16    22836      19308       1.30   1752   1 chrome
+    448      23    31116      40860     100.13   1844   1 chrome
+    240      18   124088     125536      53.91   2144   1 chrome
+    320      27    93284      82072      11.92   3364   1 chrome
+   1937      71   296292     320448     527.73   3536   1 chrome
+    246      19    46700      53692      28.84   3628   1 chrome
+    363      40   189580     182084     570.42   3828   1 chrome
+    268      17     7180      10712      18.48   4072   1 chrome
+    345      46   256708     217956     259.23   5444   1 chrome
+    239      16    18636      14832       0.63   5692   1 chrome
+    142      11     1984       4372       0.08   6372   1 chrome
+    247      10     3408       5460       0.42   6416   1 chrome
+    245      18    76796      79632      21.80   8584   1 chrome
+    330      26    85432      74488       6.05  10556   1 chrome
+    420      31   176556     186604   1,817.33  10896   1 chrome
+    244      19    67444      70688      85.20  11628   1 chrome
+    353      27    87764      73128       4.39  12112   1 chrome
+    223      15    12820      11472       0.09  13844   1 chrome
+    618      43   149216     130952      46.66  14268   1 chrome
+   1404      36   178304     123832     279.78  15096   1 chrome
+    149       8     1704       4384       0.05  10560   1 ChsIME
+    118       7     6420       8060              4584   0 conhost
+    260      13     4200      15300       0.61  13356   1 conhost
+    746      24     1908       2940               700   0 csrss
+    758      22     9724       3140               824   1 csrss
+    472      15     4172      10636      13.45   9580   1 ctfmon
+    194      16     3340       4988              7092   0 dllhost
+    126       8     1936       5180       0.39   7264   1 dllhost
+    209      14     3700       6844       0.14  11268   1 dllhost
+   1505      56    79348      70104              8956   1 dwm
+    171      14     3580       6464       1.45   8372   1 E_YATIWBE
+    267      20     3328       5924       0.67  11284   1 EEventManager
+    133       8     1372       3540              4836   0 escsvc64
+    492      17     7108      10924      73.16   1492   1 ETDCtrl
+    138       9     2132       4616              5388   1 ETDCtrlHelper
+    133       7     1444       3832              4848   0 ETDService
+    125       8     1908       3508       0.05   7176   1 ETDTouch
+   3328     133   111632     132188     176.38   7568   1 explorer
+    370      18     5312       8484       1.89   1420   1 FileCoAuth
+     32       9     4808       5612               308   1 fontdrvhost
+     32       6     1860       2980              1012   0 fontdrvhost
+    263      23     6288       8068       0.31   8772   1 FUFAXRCV
+    181      11     1740        988              8364   0 GoogleCrashHandler
+    160       9     1708        808              8384   0 GoogleCrashHandler64
+    782      53    41168      43700      26.81    856   1 HP.JumpStarts
+    966      56    33348      27548      10.58   2104   1 HPAudioSwitch
+    431      18    19768      13532              3780   0 HPCommRecovery
+    874      48    62092      40980       7.55  11776   1 HPSystemEventUtilityHost
+      0       0       60          8                 0   0 Idle
+    555      28    26232      32296       1.64   9684   1 LockApp
+     43       7     1124       3208               980   0 LsaIso
+   1865      47    10136      17800               988   0 lsass
+      0       0      372      82236              3788   0 Memory Compression
+    917      51    74872      68928       6.38   6732   1 Microsoft.Photos
+   1066      53    37452        900       0.81   8032   1 MicrosoftEdge
+    485      20     5840       7708       0.13   2392   1 MicrosoftEdgeCP
+    261      13     3892       1136       0.05  10708   1 MicrosoftEdgeSH
+   3294      82   638392     601564              5044   0 MsMpEng
+    207      13     3008       7024              2060   0 NetworkCap
+    193      11     6284       8476              7008   0 NisSrv
+    262      14     3500       8196       3.56   6972   1 notepad
+    262      14     3504       8144       1.47  16252   1 notepad
+    766      30    37028      36828              4932   0 OfficeClickToRun
+    938      52   107484      96264      98.06  11872   1 OneDrive
+    226      15     3152      12724       7.89  16296   1 PMA
+    264      10     1612       4548              4948   0 PMAService
+    744      33   113192     128036      16.94  16820   1 powershell
+    456      18    13588      19444             10244   1 ProcInfo
+   2058     104   238428      10320       7.03  11452   1 RadeonSettings
+      0      26    18268      33608               128   0 Registry
+    333      20     8108      10480       1.06   9460   1 RemindersServer
+    313      11     2444       6024              4888   0 RtkAudUService64
+    319      12     2560       6264       1.16  11732   1 RtkAudUService64
+    168       8     2160       4852              4864   0 RtkBtManServ
+    228      17     4436       6428       0.16  11780   1 RtlS5Wake
+    105       6     1232       4000       0.02   4280   1 RuntimeBroker
+    141       8     2112       6408       0.59   6756   1 RuntimeBroker
+    355      17     6280       8364       1.33   7716   1 RuntimeBroker
+    324      18     6548      16772       4.48   8200   1 RuntimeBroker
+    133       8     1660       4864       0.05   8988   1 RuntimeBroker
+    559      26    10160      21296      36.11   9040   1 RuntimeBroker
+    412      25     9980      29180       7.45  10288   1 RuntimeBroker
+    294      14     3968      13680      16.95  11296   1 RuntimeBroker
+    218      12     2960      10560       0.48  12280   1 RuntimeBroker
+    402      21    11080      14976       3.80  13240   1 RuntimeBroker
+    425      18     4912      10016       1.02  14464   1 RuntimeBroker
+    815      73    37932      32804              8720   0 SearchIndexer
+   1074      72    89040     139084       2.75  18360   1 SearchUI
+   1798      17    16596       8208              4940   0 SECOMN64
+      0       0      184      40324                72   0 Secure System
+    392      14     4028       8648             11632   0 SecurityHealthService
+    149       9     1796       4884       0.09  11600   1 SecurityHealthSystray
+    758      11     5512       8596               960   0 services
+    644      36    12804      23396      30.88   9496   1 SettingSyncHost
+    101       6     5252       6176              9904   0 SgrmBroker
+    795      36    31880      18428      19.52   7304   1 ShellExperienceHost
+    764      23     9656      21132      21.64   2688   1 sihost
+    387      22     7960      22716       0.27  12820   1 smartscreen
+     53       3     1188       1048               408   0 smss
+    585      28    10872      14328              4340   0 spoolsv
+    135       9     2048       4460              5056   0 sqlwriter
+    630      33    41848      49416       8.78   8008   1 StartMenuExperienceHost
+   1387      23    15504      22956               564   0 svchost
+    425      19     7464      10276       2.48    676   1 svchost
+     86       5      920       3152               704   0 svchost
+    160      34     6740       9168              1104   0 svchost
+   1535      19    12348      16892              1108   0 svchost
+    340      11     3088       6772              1156   0 svchost
+    168       8     1672       6876              1292   0 svchost
+    276      10     2700       6072              1320   0 svchost
+    104       9     1148       3616              1352   0 svchost
+    254      13     2628       7164              1416   0 svchost
+    212      19     2108       5856              1428   0 svchost
+    218      16     2152       7328              1436   0 svchost
+    271      19     2964       7168              1440   0 svchost
+    162       9     2264       6200              1452   0 svchost
+    448      17     9328      15096              1496   0 svchost
+    236      12     3024       6372              1552   0 svchost
+    254      10     2188       6112              1620   0 svchost
+    213       9     1712       5108              1772   0 svchost
+    460      20     4560      11804              1852   0 svchost
+    437      14    16648      17612              1872   0 svchost
+    180      10     2180       5384              1932   0 svchost
+    223      13     9648      14004              1956   0 svchost
+    203      10     1964       5028              1964   0 svchost
+    399      11     2768       6756              2084   0 svchost
+    240      10     2536       5784              2108   0 svchost
+    227      11     2284       6048              2292   0 svchost
+    391      16     5200      10420              2316   0 svchost
+    132       7     1400       4228              2332   0 svchost
+    288      14     3580       6924              2376   0 svchost
+    404      18     6636      11112              2420   0 svchost
+    413     240    11448      13800              2452   0 svchost
+    189      11     2380       7104              2540   0 svchost
+    178      10     1868       4760              2552   0 svchost
+    735      14     3064       7308              2648   0 svchost
+    216      12    11272      17460              2680   0 svchost
+    221      13     2216       5652              2776   0 svchost
+    191       9     2028       5512              2952   0 svchost
+    223      12     2388       6280              2980   0 svchost
+    458      15     8876      14720              3080   0 svchost
+    178       9     2020       5648              3124   0 svchost
+    194      11     2352       6260              3332   0 svchost
+    288      15     4540      16640              3424   0 svchost
+    203      15     6724       6240              3460   0 svchost
+    120       7     1356       5784              3524   0 svchost
+    218      11     2544       6488              3652   0 svchost
+    243       7     1272       3768              3660   0 svchost
+    178      12     1952       6264              3668   0 svchost
+    159       9     1808       5552       0.38   3704   1 svchost
+    487      19    11336      26768      35.67   3712   1 svchost
+    239       9     2032       6120              3748   0 svchost
+    181      10     2228       6636              3756   0 svchost
+    477      41     4216      10380              3932   0 svchost
+    139      13     1756       4500              4028   0 svchost
+    372      17     2808       6916              4036   0 svchost
+    534      20     6552      13572              4148   0 svchost
+    176       7     1624       4464              4184   0 svchost
+    203      13     2364       5704              4252   0 svchost
+    127       8     1556       5228              4400   0 svchost
+    587      27    10232      23476       9.25   4416   1 svchost
+    433      31    12788      17312              4424   0 svchost
+    203      11     2364       5512              4460   0 svchost
+    530      23    17524      27004              4816   0 svchost
+    172      11     4384       7192              4828   0 svchost
+    263      13     2748       5424              4856   0 svchost
+    484      21     3676       9024              4872   0 svchost
+    135       9     1592       4176              4896   0 svchost
+    136       7     1300       3684              4916   0 svchost
+    388      22    17924      20300              4924   0 svchost
+    223      14     5304       7824              4976   0 svchost
+    411      19     5064      14748              5024   0 svchost
+    378      24     3316       7336              5408   0 svchost
+    136       8     1580       4084              5872   0 svchost
+    460      26     6736      15340              7452   0 svchost
+    157      10     1984       5524              7928   0 svchost
+    178      11     2340       6940              7964   0 svchost
+    234      13     2984       7416              7976   0 svchost
+    548      28     8536      11952       6.63   8020   1 svchost
+    229      11     4000       5796              8080   0 svchost
+    261      17     2568       5964              8628   0 svchost
+    319      15     4256      14700              9304   0 svchost
+    118       7     1288       5512             10340   0 svchost
+    271      16     4720       8216             10636   0 svchost
+    300      13     3032       6808             10716   0 svchost
+    257      11     2388       5836             11164   0 svchost
+    411      16     7656      11456             13308   0 svchost
+    138       8     3564       9904             15684   0 svchost
+    142       8     2004       5368       0.02  17148   1 svchost
+    548      20     8064      13708              2068   0 SysInfoCap
+   4598       0      196         92                 4   0 System
+   1186      53    44332      49664       6.41  14160   1 SystemSettings
+    306      16     3804       7552       2.14   9664   1 TabTip
+    329      43    11008      13376       2.84   3880   1 taskhostw
+    326      26    33824      26860       0.88   2208   1 Teams
+    481      99   347008     341540     473.27   7488   1 Teams
+   1316      62    82056     102932     490.95   8920   1 Teams
+   1188      56    99688      68708      45.28  12096   1 Teams
+    755      37   135932      68020      58.61  12276   1 Teams
+    873      65    57012      58896              2076   0 TouchpointAnalyticsClientService
+    145       8     1828       5152              3312   0 unsecapp
+    957      70   122380      75832       6.19  13644   1 WhiteboardWRT
+    514      24    27016      19644       2.69  10208   1 WindowsInternal.ComposableShell.Experiences.TextInput.Inpu...
+    159      11     1392       3936               816   0 wininit
+    277      12     2672       6800               916   1 winlogon
+    184      10     2752       6080              4576   0 wlanext
+    202      13     6336      11004              3444   0 WmiPrvSE
+    763      34    29800      20328       1.05  12628   1 YourPhone
+
+
+PS C:\Users\xingy> notepad; calc; mspaint # Think these as apps slowing your machine down.
+PS C:\Users\xingy> compare-object -ReferenceObject (import-clixml C:\transcripts\process.xml) -differenceobject (get-process) -Property processName # -property sets the object for comparison
+
+processName   SideIndicator
+-----------   -------------
+commsapps     =>
+commsapps     =>
+HxTsr         =>
+RuntimeBroker =>
+WmiPrvSE      =>
+ProcInfo      <=
+smartscreen   <=
+
+
+PS C:\Users\xingy> notepad; calc; mspaint
+PS C:\Users\xingy> compare-object -ReferenceObject (import-clixml C:\transcripts\process.xml) -differenceobject (get-process) -Property processName # -property sets the object for comparison
+
+processName   SideIndicator
+-----------   -------------
+Calculator    =>
+commsapps     =>
+commsapps     =>
+HxTsr         =>
+mspaint       =>
+notepad       =>
+RuntimeBroker =>
+RuntimeBroker =>
+WmiPrvSE      =>
+ProcInfo      <=
+smartscreen   <=
+
+
+PS C:\Users\xingy> # XML is great for Comparing your work process; store data for future use or send it to database 
+PS C:\Users\xingy> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200517162703
+**********************

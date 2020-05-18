@@ -1,0 +1,984 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200517192801
+Username: XINGYIPC2020\xingy
+RunAs User: XINGYIPC2020\xingy
+Configuration Name: 
+Machine: XINGYIPC2020 (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 2200
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\transcripts\FilterData.txt
+PS C:\Users\xingy> get-help *operators*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+about_Arithmetic_Operators        HelpFile                            Describes the operators that perform arithmeti...
+about_Assignment_Operators        HelpFile                            Describes how to use operators to assign value...
+about_Comparison_Operators        HelpFile                            Describes the operators that compare values in...
+about_Logical_Operators           HelpFile                            Describes the operators that connect statement...
+about_Operators                   HelpFile                            Describes the operators that are supported by ...
+about_Type_Operators              HelpFile                            Describes the operators that work with Microso...
+
+
+PS C:\Users\xingy> get-help about_Comparison_Operators
+TOPIC
+    about_Comparison_Operators
+
+SHORT DESCRIPTION
+    Describes the operators that compare values in Windows PowerShell.
+
+LONG DESCRIPTION
+    Comparison operators let you specify conditions for comparing values and
+    finding values that match specified patterns. To use a comparison operator,
+    specify the values that you want to compare together with an operator that
+    separates these values.
+
+    Windows PowerShell includes the following comparison operators:
+
+      -eq
+      -ne
+      -gt
+      -ge   
+      -lt
+      -le
+      -Like
+      -NotLike
+      -Match
+      -NotMatch
+      -Contains
+      -NotContains
+      -In
+      -NotIn
+      -Replace
+
+    By default, all comparison operators are case-insensitive. To make a 
+    comparison operator case-sensitive, precede the operator name with a "c".
+    For example, the case-sensitive version of "-eq" is "-ceq". To make the
+    case-insensitivity explicit, precede the operator with an "i". For example,
+    the explicitly case-insensitive version of "-eq" is "-ieq".
+
+    When the input to an operator is a scalar value, comparison operators
+    return a Boolean value. When the input is a collection of values, the 
+    comparison operators return any matching values. If there are no matches
+    in a collection, comparison operators do not return anything. 
+
+    The exceptions are the containment operators (-Contains, -NotContains),
+    the In operators (-In, -NotIn), and the type operators (-Is, -IsNot),
+    which always return a Boolean value.
+
+    Windows PowerShell supports the following comparison operators.
+
+    -eq
+      Description: Equal to. Includes an identical value.
+      Example:
+
+        PS C:\> "abc" -eq "abc"
+        True
+
+        PS C:\> "abc" -eq "abc", "def"
+        False
+
+        PS C:\> "abc", "def" -eq "abc"
+        abc
+
+
+    -ne
+      Description: Not equal to. Includes a different value.
+      Example:
+
+        PS C:\> "abc" -ne "def"
+        True
+
+        PS C:\> "abc" -ne "abc"
+        False
+
+        PS C:\> "abc" -ne "abc", "def"
+        True
+
+        PS C:\> "abc", "def" -ne "abc"
+        def
+
+
+
+    -gt
+      Description: Greater-than.
+      Example:
+
+          PS C:\> 8 -gt 6
+          True
+
+          PS C:\> 7, 8, 9 -gt 8
+          9
+
+
+    -ge
+      Description: Greater-than or equal to.
+      Example:
+
+          PS C:\> 8 -ge 8
+          True         
+
+          PS C:\> 7, 8, 9 -ge 8
+          8
+          9
+
+
+    -lt
+      Description: Less-than.
+      Example:
+
+          PS C:\> 8 -lt 6
+          False
+
+          PS C:\> 7, 8, 9 -lt 8
+          7
+
+    -le
+      Description: Less-than or equal to.
+      Example:
+
+          PS C:\> 6 -le 8
+          True
+
+          PS C:\> 7, 8, 9 -le 8
+          7
+          8
+
+    -Like
+      Description: Match using the wildcard character (*).
+      Example:
+
+          PS C:\> "Windows PowerShell" -like "*shell"
+          True
+
+          PS C:\> "Windows PowerShell", "Server" -like "*shell"
+          Windows PowerShell
+
+
+    -NotLike
+      Description: Does not match using the wildcard character (*).
+      Example:
+
+          PS C:\> "Windows PowerShell" -NotLike "*shell"
+          False
+
+          PS C:\> "Windows PowerShell", "Server" -NotLike "*shell"
+          Server               
+
+
+    -Match 
+      Description: Matches a string using regular expressions. 
+                   When the input is scalar, it populates the
+                   $Matches automatic variable. 
+      Example:
+
+                                      
+          PS C:\> "Sunday" -Match "sun" 
+          True 
+
+          PS C:\> $matches 
+          Name Value 
+          ---- ----- 
+          0    Sun
+ 
+          PS C:\> "Sunday", "Monday" -Match "sun" 
+          Sunday
+ 
+
+    -NotMatch
+      Description: Does not match a string. Uses regular expressions.
+                   When the input is scalar, it populates the $Matches
+                   automatic variable. 
+      Example:
+
+          PS C:\> "Sunday" -NotMatch "sun"
+          False
+
+          PS C:\> $matches 
+          Name Value 
+          ---- ----- 
+          0    sun
+
+          PS C:\> "Sunday", "Monday" -NotMatch "sun" 
+          Monday
+
+
+    -Contains
+      Description: Containment operator. Tells whether a collection of reference
+      values includes a single test value. Always returns a Boolean value. Returns TRUE
+      only when the test value exactly matches at least one of the reference values. 
+
+      When the test value is a collection, the Contains operator uses reference
+      equality. It returns TRUE only when one of the reference values is the same
+      instance of the test value object.
+
+      Syntax: 
+          <Reference-values> -Contains <Test-value>
+
+      Examples:
+
+          PS C:\> "abc", "def" -Contains "def"
+          True
+
+          PS C:\> "Windows", "PowerShell" -Contains "Shell"
+          False  #Not an exact match
+
+
+          # Does the list of computers in $domainServers
+          # include $thisComputer?
+          # -------------------------------------------
+          PS C:\> $domainServers -Contains $thisComputer
+          True
+
+          PS C:\> "abc", "def", "ghi" -Contains "abc", "def"
+          False
+
+          PS C:\> $a = "abc", "def"
+          PS C:\> "abc", "def", "ghi" -Contains $a
+          False
+          PS C:\> $a, "ghi" -Contains $a
+          True
+
+
+    -NotContains
+      Description: Containment operator. Tells whether a collection of reference
+      values includes a single test value. Always returns a Boolean value. Returns
+      TRUE when the test value is not an exact matches for at least one of the reference
+      values. 
+
+      When the test value is a collection, the NotContains operator uses reference
+      equality. 
+
+      Syntax: 
+          <Reference-values> -NotContains <Test-value>
+
+      Examples:
+
+          PS C:\> "Windows", "PowerShell" -NotContains "Shell"
+          True  #Not an exact match
+
+
+          # Get cmdlet parameters, but exclude common parameters
+          function get-parms ($cmdlet)
+          {
+              $Common = "Verbose", "Debug", "WarningAction", "WarningVariable", `
+                        "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer" 
+    
+              $allparms = (Get-Command $Cmdlet).parametersets | foreach {$_.Parameters} | `
+                          foreach {$_.Name} | Sort-Object | Get-Unique
+    
+              $allparms | where {$Common -NotContains $_ }
+          }
+
+
+          # Find unapproved verbs in the functions in my module
+          # -------------------------------------------
+          PS C:\> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
+          PS C:\> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
+
+          PS C:\> $myVerbs | where {$ApprovedVerbs -NotContains $_}      
+          ForEach
+          Sort
+          Tee
+          Where
+
+
+    -In
+      Description: In operator. Tells whether a test value appears in a collection
+      of reference values. Always return as Boolean value. Returns TRUE only when
+      the test value exactly matches at least one of the reference values. 
+
+      When the test value is a collection, the In operator uses reference equality. 
+      It returns TRUE only when one of the reference values is the same
+      instance of the test value object.
+   
+      The In operator was introduced in Windows PowerShell 3.0.
+
+      Syntax: 
+         <Test-value> -in <Reference-values> 
+
+      
+      Examples:
+
+          PS C:\> "def" -in "abc", "def"
+          True
+
+          PS C:\> "Shell" -in "Windows", "PowerShell"
+          False  #Not an exact match
+
+          PS C:\> "Windows" -in "Windows", "PowerShell"
+          True  #An exact match
+
+          PS C:\> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
+          False  #Using reference equality
+
+          PS C:\> $a = "Windows", "PowerShell"
+          PS C:\> $a -in $a, "ServerManager"
+          True  #Using reference equality
+
+          # Does the list of computers in $domainServers
+          # include $thisComputer?
+          # -------------------------------------------
+          PS C:\> $thisComputer -in  $domainServers
+          True
+     
+
+    -NotIn
+      Description: NotIn operator. Tells whether a test value appears in a collection
+      of reference values. Always returns a Boolean value. Returns TRUE when the test
+      value is not an exact match for at least one of the reference values. 
+
+      When the test value is a collection, the In operator uses reference equality. 
+      It returns TRUE only when one of the reference values is the same
+      instance of the test value object.
+
+      The NotIn operator was introduced in Windows PowerShell 3.0.
+
+      Syntax: 
+         <Test-value> -NotIn <Reference-values> 
+
+      
+      Examples:
+
+          PS C:\> "def" -NotIn "abc", "def"
+          False
+
+          PS C:\> "ghi" -NotIn "abc", "def"
+          True
+
+          PS C:\> "Shell" -NotIn "Windows", "PowerShell"
+          True  #Not an exact match
+
+          PS C:\> "Windows" -NotIn "Windows", "PowerShell"
+          False  #An exact match
+
+
+
+          # Find unapproved verbs in the functions in my module
+          # -------------------------------------------
+          PS C:\> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
+          PS C:\> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
+
+          PS C:\> $myVerbs | where {$_ -NotIn $ApprovedVerbs}      
+          ForEach
+          Sort
+          Tee
+          Where
+
+
+
+    -Replace
+      Description: Replace operator. Changes the specified elements of a value.
+      Example:
+
+
+          PS C:\> "Get-Process" -Replace "Get", "Stop"
+          Stop-Process
+
+          # Change all .GIF file name extension to .JPG
+          PS C:\> dir *.gif | foreach {$_ -Replace ".gif", ".jpg"} 
+               
+
+
+
+
+  Equality Operators
+      The equality operators (-eq, -ne) return a value of TRUE or the matches
+      when one or more of the input values is identical to the specified 
+      pattern. The entire pattern must match an entire value.
+
+          C:PS> 2 -eq 2
+          True
+
+          C:PS> 2 -eq 3
+          False
+
+          C:PS> 1,2,3 -eq 2
+          2
+
+          C:PS> "PowerShell" -eq "Shell"
+          False
+
+          C:PS> "Windows", "PowerShell" -eq "Shell"
+          C:PS> 
+
+          PS C:\> "abc", "def", "123" -eq "def"
+          def
+ 
+          PS C:\> "abc", "def", "123" -ne "def"
+          abc
+          123
+
+
+  Containment Operators
+      The containment operators (-Contains and -NotContains) are similar to the
+      equality operators. However, the containment operators always return a 
+      Boolean value, even when the input is a collection. 
+
+      Also, unlike the equality operators, the containment operators return a 
+      value as soon as they detect the first match. The equality operators 
+      evaluate all input and then return all the matches in the collection.
+      The following examples show the effect of the -Contains operator:
+
+          C:PS> 1,2,3 -contains 2
+          True
+
+          C:PS> "PowerShell" -contains "Shell"
+          False
+
+          C:PS> "Windows", "PowerShell" -contains "Shell"
+          False
+
+          PS C:\> "abc", "def", "123" -contains "def"
+          True
+
+          PS C:\> "true", "blue", "six" -contains "true"
+          True
+ 
+
+      The following example shows how the containment operators differ from the
+      equal to operator. The containment operators return a value of TRUE on the 
+      first match.
+ 
+
+          PS C:\> 1,2,3,4,5,4,3,2,1 -eq 2
+          2
+          2
+
+          PS C:\> 1,2,3,4,5,4,3,2,1 -contains 2
+          True
+ 
+      
+      In a very large collection, the -Contains operator returns results 
+      quicker than the equal to operator.
+
+
+  Match Operators
+      The match operators (-Match and -NotMatch) find elements that match or
+      do not match a specified pattern using regular expressions. 
+
+      The syntax is:
+
+          <string[]> -Match <regular-expression>
+          <string[]> -NotMatch <regular-expression>
+
+
+      The following examples show some uses of the -Match operator:
+
+
+          PS C:\> "Windows", "PowerShell" -Match ".shell"
+          PowerShell
+
+          PS C:\> (Get-Command Get-Member -Syntax) -Match "-view"
+          True
+
+          PS C:\> (Get-Command Get-Member -Syntax) -NotMatch "-path"
+          True
+
+          PS C:\> (Get-Content Servers.txt) -Match "^Server\d\d"
+          Server01
+          Server02
+
+         
+      The match operators search only in strings. They cannot search in arrays
+      of integers or other objects. 
+
+      The -Match and -NotMatch operators populate the $Matches automatic
+      variable when the input (the left-side argument) to the operator
+      is a single scalar object. When the input is scalar, the -Match and
+      -NotMatch operators return a Boolean value and set the value of the
+      $Matches automatic variable to the matched components of the argument.
+
+      If the input is a collection, the -Match and -NotMatch operators return
+      the matching members of that collection, but the operator does not
+      populate the $Matches variable.
+
+      For example, the following command submits a collection of strings to
+      the -Match operator. The -Match operator returns the items in the collection
+      that match. It does not populate the $Matches automatic variable.
+
+          PS C:\> "Sunday", "Monday", "Tuesday" -Match "sun"
+          Sunday
+
+          PS C:\> $matches
+          PS C:\>
+
+
+      In contrast, the following command submits a single string to the
+      -Match operator. The -Match operator returns a Boolean value and 
+      populates the $Matches automatic variable.
+
+          PS C:\> "Sunday" -Match "sun"
+          True
+
+          PS C:\> $matches
+
+          Name                           Value
+          ----                           -----
+          0                              Sun
+
+
+      The -NotMatch operator populates the $Matches automatic variable when
+      the input is scalar and the result is False, that it, when it detects
+      a match.
+
+
+          PS C:\> "Sunday" -NotMatch "rain"
+          True
+
+          PS C:\> $matches
+          PS C:\>
+          
+          PS C:\> "Sunday" -NotMatch "day"
+          False
+
+          PS C:\> $matches
+          PS C:\>
+
+          Name                           Value
+          ----                           -----
+          0                              day
+
+        
+  Replace Operator
+      The -Replace operator replaces all or part of a value with the specified 
+      value using regular expressions. You can use the -Replace operator for 
+      many administrative tasks, such as renaming files. For example, the 
+      following command changes the file name extensions of all .gif files
+      to .jpg:
+ 
+
+          Get-ChildItem | Rename-Item -NewName { $_ -Replace '.gif$','.jpg$' }
+
+ 
+      The syntax of the -Replace operator is as follows, where the <original> 
+      placeholder represents the characters to be replaced, and the
+      <substitute> placeholder represents the characters that will replace 
+      them:
+
+
+          <input> <operator> <original>, <substitute> 
+
+
+      By default, the -Replace operator is case-insensitive. To make it case 
+      sensitive, use -cReplace. To make it explicitly case-insensitive, use 
+      -iReplace. Consider the following examples:
+
+
+          PS C:\> "book" -Replace "B", "C"
+          Cook
+          PS C:\> "book" -iReplace "B", "C" 
+          Cook
+          PS C:\> "book" -cReplace "B", "C"
+          book
+ 
+         PS C:\> '<command:parameter required="false" variableLength="true" globbing="false"'`
+                 | foreach {$_ -replace 'globbing="false"', 'globbing="true"'}
+         <command:parameter required="false" variableLength="true" globbing="true"
+
+
+
+  Bitwise Operators
+      Windows PowerShell supports the standard bitwise operators, including
+      bitwise-AND (-bAnd), the inclusive and exclusive bitwise-OR operators 
+      (-bOr and -bXor), and bitwise-NOT (-bNot). 
+
+      Beginning in Windows PowerShell 2.0, all bitwise operators work with 
+      64-bit integers.
+
+      Beginning in Windows PowerShell 3.0, the -shr (shift-right) and 
+      -shl (shift-left) are introduced to support bitwise arithmetic in 
+      Windows PowerShell.
+
+
+      Windows PowerShell supports the following bitwise operators.
+
+      Operator  Description               Example  
+      --------  ----------------------    -------------------
+      -bAnd     Bitwise AND               PS C:\> 10 -band 3
+                                          2
+ 
+      -bOr      Bitwise OR (inclusive)    PS C:\> 10 -bor 3
+                                          11    
+
+      -bXor     Bitwise OR (exclusive)    PS C:\> 10 -bxor 3
+                                          9
+
+      -bNot     Bitwise NOT               PS C:\> -bNot 10
+                                          -11
+
+      -shl      Shift-left                PS C:\> 100 -shl 2
+                                          400
+ 
+      -shr      Shift-right               PS C:\> 100 -shr 1
+                                          50
+ 
+
+
+      Bitwise operators act on the binary format of a value. For example, the
+      bit structure for the number 10 is 00001010 (based on 1 byte), and the
+      bit structure for the number 3 is 00000011. When you use a bitwise 
+      operator to compare 10 to 3, the individual bits in each byte are
+      compared.
+ 
+
+      In a bitwise AND operation, the resulting bit is set to 1 only when both 
+      input bits are 1.
+
+
+          1010      (10)
+          0011      ( 3)
+          --------------  bAND
+          0010      ( 2)
+
+ 
+      In a bitwise OR (inclusive) operation, the resulting bit is set to 1 
+      when either or both input bits are 1. The resulting bit is set to 0 only
+      when both input bits are set to 0.
+
+
+          1010      (10)
+          0011      ( 3)
+          --------------  bOR (inclusive)
+          1011      (11)
+
+
+      In a bitwise OR (exclusive) operation, the resulting bit is set to 1 only
+      when one input bit is 1.
+
+
+          1010      (10)
+          0011      ( 3)
+          --------------  bXOR (exclusive)
+          1001      ( 9)
+ 
+
+      The bitwise NOT operator is a unary operator that produces the binary
+      complement of the value. A bit of 1 is set to 0 and a bit of 0 is set
+      to 1. 
+
+      For example, the binary complement of 0 is -1, the maximum unsigned 
+      integer (0xffffffff), and the binary complement of -1 is 0.
+
+
+          PS C:\> -bNOT 10
+          -11
+
+
+          0000 0000 0000 1010  (10)
+          ------------------------- bNOT
+          1111 1111 1111 0101  (-11, xfffffff5) 
+
+
+
+      In a bitwise shift-left operation, all bits are moved "n" places to 
+      the left, where "n" is the value of the right operand. A zero is 
+      inserted in the ones place. 
+
+      When the left operand is an Integer (32-bit) value, the lower 5 bits
+      of the right operand determine how many bits of the left operand are 
+      shifted.
+
+      When the left operand is a Long (64-bit) value, the lower 6 bits of 
+      the right operand determine how many bits of the left operand are 
+      shifted.
+
+        PS C:\> 21 -shl 1
+        42
+
+          00010101  (21)
+          00101010  (42)
+
+        PS C:\> 21 -shl 2
+        84
+
+          00010101  (21)
+          00101010  (42)
+          01010100  (84)
+
+
+      In a bitwise shift-right operation, all bits are moved "n" places
+      to the right, where "n" is specified by the right operand. The 
+      shift-right operator (-shr) inserts a zero in the left-most 
+      place when shifting a positive or unsigned value to the right.
+
+      When the left operand is an Integer (32-bit) value, the lower 5 bits
+      of the right operand determine how many bits of the left operand are 
+      shifted.
+
+      When the left operand is a Long (64-bit) value, the lower 6 bits of 
+      the right operand determine how many bits of the left operand are 
+      shifted.
+
+        PS C:\> 21 -shr 1
+        10
+
+          00010101  (21)
+          00001010  (10)
+
+        PS C:\> 21 -shr 2
+        5
+
+          00010101  (21)
+          00001010  (10)
+          00000101  ( 5)
+
+
+
+SEE ALSO
+    about_Operators
+    about_Regular_Expressions
+    about_Wildcards
+    Compare-Object
+    Foreach-Object
+    Where-Object
+PS C:\Users\xingy> 4 -gt 3 # gt: greater than
+True
+PS C:\Users\xingy> 4 -lt 3 # lt: less than
+False
+PS C:\Users\xingy> 4 -eq 3
+False
+PS C:\Users\xingy> 4 -ne 3 # ne: not equal
+True
+PS C:\Users\xingy> 4 -le 3 # le: less than or equal
+False
+PS C:\Users\xingy> "Hello" -eq "HELLO"
+True
+PS C:\Users\xingy> # Windows and PowerShell is not case sensitive
+PS C:\Users\xingy> "Hello" -ceq "HELLO" # Make it case-seneitive
+False
+PS C:\Users\xingy> gsv | Where-Object {$_.status -eq "stopped"}
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AarSvc_e40a4       Agent Activation Runtime_e40a4
+Stopped  AJRouter           AllJoyn Router Service
+Stopped  ALG                Application Layer Gateway Service
+Stopped  AppIDSvc           Application Identity
+Stopped  AppReadiness       App Readiness
+Stopped  AppXSvc            AppX Deployment Service (AppXSVC)
+Stopped  aspnet_state       ASP.NET State Service
+Stopped  autotimesvc        Cellular Time
+Stopped  AxInstSV           ActiveX Installer (AxInstSV)
+Stopped  BcastDVRUserSer... GameDVR and Broadcast User Service_...
+Stopped  BDESVC             BitLocker Drive Encryption Service
+Stopped  BITS               Background Intelligent Transfer Ser...
+Stopped  CaptureService_... CaptureService_e40a4
+Stopped  ClipSVC            Client License Service (ClipSVC)
+Stopped  COMSysApp          COM+ System Application
+Stopped  ConsentUxUserSv... ConsentUX_e40a4
+Stopped  CredentialEnrol... CredentialEnrollmentManagerUserSvc_...
+Stopped  defragsvc          Optimize drives
+Stopped  DeviceAssociati... DeviceAssociationBroker_e40a4
+Stopped  DeviceInstall      Device Install Service
+Stopped  DevicePickerUse... DevicePicker_e40a4
+Stopped  DevQueryBroker     DevQuery Background Discovery Broker
+Stopped  diagnosticshub.... Microsoft (R) Diagnostics Hub Stand...
+Stopped  diagsvc            Diagnostic Execution Service
+Stopped  DmEnrollmentSvc    Device Management Enrollment Service
+Stopped  dmwappushservice   Device Management Wireless Applicat...
+Stopped  dot3svc            Wired AutoConfig
+Stopped  DsmSvc             Device Setup Manager
+Stopped  Eaphost            Extensible Authentication Protocol
+Stopped  embeddedmode       Embedded Mode
+Stopped  EntAppSvc          Enterprise App Management Service
+Stopped  Fax                Fax
+Stopped  fdPHost            Function Discovery Provider Host
+Stopped  FDResPub           Function Discovery Resource Publica...
+Stopped  fhsvc              File History Service
+Stopped  FontCache3.0.0.0   Windows Presentation Foundation Fon...
+Stopped  FrameServer        Windows Camera Frame Server
+Stopped  GoogleChromeEle... Google Chrome Elevation Service
+Stopped  GraphicsPerfSvc    GraphicsPerfSvc
+Stopped  gupdate            Google Update Service (gupdate)
+Stopped  gupdatem           Google Update Service (gupdatem)
+Stopped  hidserv            Human Interface Device Service
+Stopped  icssvc             Windows Mobile Hotspot Service
+Stopped  IpxlatCfgSvc       IP Translation Configuration Service
+Stopped  KtmRm              KtmRm for Distributed Transaction C...
+Stopped  lltdsvc            Link-Layer Topology Discovery Mapper
+Stopped  LxpSvc             Language Experience Service
+Stopped  MapsBroker         Downloaded Maps Manager
+Stopped  MessagingServic... MessagingService_e40a4
+Stopped  MixedRealityOpe... Windows Mixed Reality OpenXR Service
+Stopped  MSDTC              Distributed Transaction Coordinator
+Stopped  MSiSCSI            Microsoft iSCSI Initiator Service
+Stopped  msiserver          Windows Installer
+Stopped  NaturalAuthenti... Natural Authentication
+Stopped  NcaSvc             Network Connectivity Assistant
+Stopped  NcdAutoSetup       Network Connected Devices Auto-Setup
+Stopped  Netlogon           Netlogon
+Stopped  NetSetupSvc        Network Setup Service
+Stopped  NetTcpPortSharing  Net.Tcp Port Sharing Service
+Stopped  ose64              Office 64 Source Engine
+Stopped  p2pimsvc           Peer Networking Identity Manager
+Stopped  p2psvc             Peer Networking Grouping
+Stopped  perceptionsimul... Windows Perception Simulation Service
+Stopped  PerfHost           Performance Counter DLL Host
+Stopped  pla                Performance Logs & Alerts
+Stopped  PNRPAutoReg        PNRP Machine Name Publication Service
+Stopped  PNRPsvc            Peer Name Resolution Protocol
+Stopped  PolicyAgent        IPsec Policy Agent
+Stopped  PrintNotify        Printer Extensions and Notifications
+Stopped  PrintWorkflowUs... PrintWorkflow_e40a4
+Stopped  PushToInstall      Windows PushToInstall Service
+Stopped  QWAVE              Quality Windows Audio Video Experience
+Stopped  RasAuto            Remote Access Auto Connection Manager
+Stopped  RemoteAccess       Routing and Remote Access
+Stopped  RemoteRegistry     Remote Registry
+Stopped  RetailDemo         Retail Demo Service
+Stopped  RmSvc              Radio Management Service
+Stopped  RpcLocator         Remote Procedure Call (RPC) Locator
+Stopped  SCardSvr           Smart Card
+Stopped  ScDeviceEnum       Smart Card Device Enumeration Service
+Stopped  SCPolicySvc        Smart Card Removal Policy
+Stopped  SDRSVC             Windows Backup
+Stopped  seclogon           Secondary Logon
+Stopped  SensorDataService  Sensor Data Service
+Stopped  SensorService      Sensor Service
+Stopped  SensrSvc           Sensor Monitoring Service
+Stopped  SharedAccess       Internet Connection Sharing (ICS)
+Stopped  SharedRealitySvc   Spatial Data Service
+Stopped  shpamsvc           Shared PC Account Manager
+Stopped  smphost            Microsoft Storage Spaces SMP
+Stopped  SmsRouter          Microsoft Windows SMS Router Service.
+Stopped  SNMPTRAP           SNMP Trap
+Stopped  spectrum           Windows Perception Service
+Stopped  sppsvc             Software Protection
+Stopped  ssh-agent          OpenSSH Authentication Agent
+Stopped  svsvc              Spot Verifier
+Stopped  swprv              Microsoft Software Shadow Copy Prov...
+Stopped  TapiSrv            Telephony
+Stopped  TieringEngineSe... Storage Tiers Management
+Stopped  TroubleshootingSvc Recommended Troubleshooting Service
+Stopped  TrustedInstaller   Windows Modules Installer
+Stopped  tzautoupdate       Auto Time Zone Updater
+Stopped  UmRdpService       Remote Desktop Services UserMode Po...
+Stopped  upnphost           UPnP Device Host
+Stopped  VacSvc             Volumetric Audio Compositor Service
+Stopped  VBoxSDS            VirtualBox system service
+Stopped  vds                Virtual Disk
+Stopped  vmicguestinterface Hyper-V Guest Service Interface
+Stopped  vmicheartbeat      Hyper-V Heartbeat Service
+Stopped  vmickvpexchange    Hyper-V Data Exchange Service
+Stopped  vmicrdv            Hyper-V Remote Desktop Virtualizati...
+Stopped  vmicshutdown       Hyper-V Guest Shutdown Service
+Stopped  vmictimesync       Hyper-V Time Synchronization Service
+Stopped  vmicvmsession      Hyper-V PowerShell Direct Service
+Stopped  vmicvss            Hyper-V Volume Shadow Copy Requestor
+Stopped  VSS                Volume Shadow Copy
+Stopped  VSStandardColle... Visual Studio Standard Collector Se...
+Stopped  W32Time            Windows Time
+Stopped  w3logsvc           W3C Logging Service
+Stopped  WaaSMedicSvc       Windows Update Medic Service
+Stopped  WalletService      WalletService
+Stopped  WarpJITSvc         WarpJITSvc
+Stopped  wbengine           Block Level Backup Engine Service
+Stopped  wcncsvc            Windows Connect Now - Config Registrar
+Stopped  WebClient          WebClient
+Stopped  Wecsvc             Windows Event Collector
+Stopped  WEPHOSTSVC         Windows Encryption Provider Host Se...
+Stopped  wercplsupport      Problem Reports and Solutions Contr...
+Stopped  WerSvc             Windows Error Reporting Service
+Stopped  WFDSConMgrSvc      Wi-Fi Direct Services Connection Ma...
+Stopped  WiaRpc             Still Image Acquisition Events
+Stopped  WinRM              Windows Remote Management (WS-Manag...
+Stopped  wisvc              Windows Insider Service
+Stopped  wlpasvc            Local Profile Assistant Service
+Stopped  WManSvc            Windows Management Service
+Stopped  wmiApSrv           WMI Performance Adapter
+Stopped  WMPNetworkSvc      Windows Media Player Network Sharin...
+Stopped  workfolderssvc     Work Folders
+Stopped  WpcMonSvc          Parental Controls
+Stopped  WPDBusEnum         Portable Device Enumerator Service
+Stopped  wuauserv           Windows Update
+Stopped  WwanSvc            WWAN AutoConfig
+Stopped  XblAuthManager     Xbox Live Auth Manager
+Stopped  XblGameSave        Xbox Live Game Save
+Stopped  XboxGipSvc         Xbox Accessory Management Service
+Stopped  XboxNetApiSvc      Xbox Live Networking Service
+
+
+PS C:\Users\xingy> gsv | Where-Object {$_.status -eq "stopped" -and $_.name -like "b*"}
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  BcastDVRUserSer... GameDVR and Broadcast User Service_...
+Stopped  BDESVC             BitLocker Drive Encryption Service
+Stopped  BITS               Background Intelligent Transfer Ser...
+
+
+PS C:\Users\xingy> gsv -name b*
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  BcastDVRUserSer... GameDVR and Broadcast User Service_...
+Stopped  BDESVC             BitLocker Drive Encryption Service
+Running  BFE                Base Filtering Engine
+Stopped  BITS               Background Intelligent Transfer Ser...
+Running  BluetoothUserSe... Bluetooth User Support Service_e40a4
+Running  BrokerInfrastru... Background Tasks Infrastructure Ser...
+Running  BTAGService        Bluetooth Audio Gateway Service
+Running  BthAvctpSvc        AVCTP service
+Running  bthserv            Bluetooth Support Service
+
+
+PS C:\Users\xingy> get-help get-service
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+SYNTAX
+    Get-Service [-ComputerName <String[]>] [-DependentServices] -DisplayName <String[]> [-Exclude <String[]>]
+    [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>]
+    [-InputObject <ServiceController[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include
+    <String[]>] [-RequiredServices] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Service cmdlet gets objects that represent the services on a local computer or on a remote computer,
+    including running and stopped services.
+
+    You can direct this cmdlet to get only particular services by specifying the service name or display name of the
+    services, or you can pipe service objects to this cmdlet.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821593
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Start-Service
+    Stop-Service
+    Suspend-Service
+
+REMARKS
+    To see the examples, type: "get-help Get-Service -examples".
+    For more information, type: "get-help Get-Service -detailed".
+    For technical information, type: "get-help Get-Service -full".
+    For online help, type: "get-help Get-Service -online"
+
+
+PS C:\Users\xingy> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200517193622
+**********************

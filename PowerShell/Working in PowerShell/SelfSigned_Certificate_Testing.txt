@@ -1,0 +1,47 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200806120618
+Username: REDMOND\xingyz
+RunAs User: REDMOND\xingyz
+Configuration Name: 
+Machine: DESKTOP-H27GULV (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 3548
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\xingyz\Transcripts\SelfSigned_Certificate_Testing.txt
+PS C:\windows\system32> $cert = New-SelfSignedCertificate -Subject "testing" -DnsName "test.com", "www.test.com" -FriendlyName "test.com" -CertStoreLocation "cert:\LocalMachine\My"
+
+PS C:\windows\system32> $cert.DnsNameList
+
+Punycode     Unicode
+--------     -------
+test.com     test.com
+www.test.com www.test.com
+
+
+PS C:\windows\system32> Export-PfxCertificate -Cert $cert -FilePath C:\Users\xingyz\Documents\SupportFiles\Certificates\test.pfx -Password (ConvertTo-SecureString -String Xingyi -Force -AsPlainText)
+
+
+    Directory: C:\Users\xingyz\Documents\SupportFiles\Certificates
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         8/6/2020  12:10 PM           2693 test.pfx
+
+
+PS C:\windows\system32> # Now this cert is in the folder and auto show up in mmc local personal certs folder.
+PS C:\windows\system32> # Now the self signed cert is successfully created.
+PS C:\windows\system32> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200806121246
+**********************
